@@ -196,8 +196,9 @@ header h1 {
 }
 header nav {
   position: absolute;
-  bottom: 0;
+  bottom: 1.5em;
   right: 18px;
+  text-transform: uppercase;
 }
 header nav ul {
   margin: 0;
@@ -205,4 +206,10 @@ header nav ul {
 header nav li {
   list-style-type: none;
   display: inline;
+}
+header nav li:first-child {
+  font-weight: 700;
+}
+header nav li + li {
+  margin: 0 0 0 1em;
 }
