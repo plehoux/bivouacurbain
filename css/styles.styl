@@ -70,7 +70,7 @@ header
     position: relative
     height: 100%
 
-  img
+  figure
     position: absolute
     left: 0; bottom: -47px
 
@@ -95,3 +95,24 @@ header
 
     li:first-child { font-weight: 700 }
     li + li { margin: 0 0 0 1em }
+
+// Invaders ------------------------------------------------------------------
+.playing
+  h1, nav
+    opacity: 0
+    -webkit-transition: opacity .4s ease-out
+
+.ship
+  -webkit-transition: -webkit-transform .4s ease-out
+  -webkit-transform: rotate(-90deg) scale(.3) translate3d(-450px,0,0)
+
+  img { -webkit-transform: translate3d(0,0,0) }
+
+  .bullet
+    position: absolute
+    top: 50%; left: 10%
+    display: block
+    width: 125px; height: 20px
+    background-color: #fff
+    border-radius: 20px
+    margin: -10px 0 0 0

@@ -178,7 +178,7 @@ header .wrap {
   position: relative;
   height: 100%;
 }
-header img {
+header figure {
   position: absolute;
   left: 0;
   bottom: -47px;
@@ -212,4 +212,27 @@ header nav li:first-child {
 }
 header nav li + li {
   margin: 0 0 0 1em;
+}
+.playing h1,
+.playing nav {
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-out;
+}
+.ship {
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  -webkit-transform: rotate(-90deg) scale(0.3) translate3d(-450px, 0, 0);
+}
+.ship img {
+  -webkit-transform: translate3d(0, 0, 0);
+}
+.ship .bullet {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  display: block;
+  width: 125px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  margin: -10px 0 0 0;
 }
