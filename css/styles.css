@@ -106,11 +106,11 @@ button {
 }
 a:link,
 a:visited {
-  color: #ff1493;
+  color: #e4032e;
 }
 a:focus,
 a:link:hover {
-  color: #ff69b4;
+  color: #e4032e;
 }
 p,
 ul,
@@ -137,7 +137,7 @@ h1 {
   color: #333;
   font-size: 32px;
   font-size: 3.2rem;
-  margin: 0.7em 0;
+  margin: 0;
 }
 h2 {
   color: #333;
@@ -156,4 +156,53 @@ h4 {
   font-size: 16px;
   font-size: 1.6rem;
   margin: 1.3em 0;
+}
+.wrap {
+  width: 934px;
+  margin: 0 auto;
+}
+header {
+  overflow: hidden;
+  height: 510px;
+  background: url("../images/header-bg.png") left top repeat;
+}
+header a:link,
+header a:visited {
+  color: #fff;
+}
+header a:focus,
+header a:link:hover {
+  color: #fff;
+}
+header .wrap {
+  position: relative;
+  height: 100%;
+}
+header img {
+  position: absolute;
+  left: 0;
+  bottom: -47px;
+}
+header h1 {
+  position: absolute;
+  bottom: 78px;
+  right: 18px;
+  width: 425px;
+  height: 139px;
+  background: url("../images/bivouac-boulevard-scion.png") left top no-repeat;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+header nav {
+  position: absolute;
+  bottom: 0;
+  right: 18px;
+}
+header nav ul {
+  margin: 0;
+}
+header nav li {
+  list-style-type: none;
+  display: inline;
 }
