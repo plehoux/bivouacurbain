@@ -100,7 +100,7 @@ legend,
 input,
 textarea,
 button {
-  font-family: 'Helvetica Neue';
+  font-family: 'pt-sans', 'Helvetica Neue', 'Arial', 'sans-serif';
   line-height: 1.4;
   color: #333;
 }
