@@ -234,7 +234,32 @@ header
     padding: 1em 5em 0
 
 // Testimonials --------------------------------------------------------------
-// #testimonials
+#testimonials
+  blockquote
+    position: relative
+    background: url(../images/blockquote-bg.png) left bottom no-repeat
+
+    &:after
+      position: absolute
+      left: 31px; bottom: 60px
+      content: url(../images/blockquote-arrow.png)
+
+    div
+      @extend .clearfix
+      padding: 2em 0 0
+
+    img, p
+      float: left
+      margin: 0
+
+    p
+      padding: .75em 0 0 .5em
+
+    span
+      display: block
+      line-height: 1
+      font-weight: 700
+      color: $dark-color
 
 // Judges --------------------------------------------------------------------
 // #judges

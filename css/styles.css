@@ -128,7 +128,8 @@ figure {
 }
 .clearfix:after,
 .wrap:after,
-ol:after {
+ol:after,
+#testimonials blockquote div:after {
   display: block;
   content: '';
   clear: both;
@@ -363,6 +364,33 @@ header .hint li + li {
   font-size: 1.2rem;
   text-align: center;
   padding: 1em 5em 0;
+}
+#testimonials blockquote {
+  position: relative;
+  background: url("../images/blockquote-bg.png") left bottom no-repeat;
+}
+#testimonials blockquote:after {
+  position: absolute;
+  left: 31px;
+  bottom: 60px;
+  content: url("../images/blockquote-arrow.png");
+}
+#testimonials blockquote div {
+  padding: 2em 0 0;
+}
+#testimonials blockquote img,
+#testimonials blockquote p {
+  float: left;
+  margin: 0;
+}
+#testimonials blockquote p {
+  padding: 0.75em 0 0 0.5em;
+}
+#testimonials blockquote span {
+  display: block;
+  line-height: 1;
+  font-weight: 700;
+  color: #1b1d1f;
 }
 .playing h1,
 .playing nav,
