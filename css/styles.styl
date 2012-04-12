@@ -2,8 +2,11 @@
 
 // Variables -----------------------------------------------------------------
 $main-color = #e4032e
+$dark-color = #1b1d1f
 
 // Base ----------------------------------------------------------------------
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box }
+
 html
   font-size: 62.5%
   height: 100%
@@ -15,12 +18,18 @@ body
 body, legend, input, textarea, button
   font-family: 'pt-sans', 'Helvetica Neue', 'Arial', 'sans-serif'
   line-height: 1.4
-  color: #333
+  color: #5d6770
 
 a:link, a:visited { color: $main-color }
 a:focus, a:link:hover { color: $main-color }
 
 p, ul, ol, dl, blockquote, table, figure { margin: .8em 0 }
+
+.clearfix, .wrap, ol
+  &:after
+    display: block
+    content: ''
+    clear: both
 
 // Headings ------------------------------------------------------------------
 hgroup > :first-child { margin-bottom: .3em }
@@ -35,10 +44,12 @@ h1
   margin: 0
 
 h2
-  color: #333
-  font-size: 24px
-  font-size: 2.4rem
-  margin: .8em 0
+  color: #acafb3
+  font-size: 16px
+  font-size: 1.6rem
+  font-weight: 300
+  text-transform: uppercase
+  text-align: center
 
 h3
   color: #333
@@ -54,15 +65,38 @@ h4
 
 // Layout --------------------------------------------------------------------
 .wrap
+  position: relative
   width: 934px
   margin: 0 auto
 
-ul
+section
+  padding: 2.75em 0
+
+ul, ol
   margin: 0
+  padding: 0
 
 li
   list-style-type: none
   display: inline
+
+em
+  font-style: normal
+  font-weight: 700
+
+.dark
+  color: $dark-color
+
+.col
+  float: left
+  margin: 0
+  padding: 0 2%
+
+.col-2
+  width: 50%
+
+.col-3
+  width: 33.3%
 
 // Header --------------------------------------------------------------------
 header
@@ -74,7 +108,6 @@ header
   a:focus, a:link:hover { color: #fff }
 
   .wrap
-    position: relative
     height: 100%
 
   figure
@@ -111,6 +144,7 @@ header
     li + li { margin: 0 0 0 1em }
 
   .hint
+    display: none
     position: absolute
     top: 12px; right: 18px
 
@@ -127,6 +161,58 @@ header
         color: $main-color
 
     li + li { margin: 0 0 0 .3em }
+
+// Intro ---------------------------------------------------------------------
+#intro
+  div.col
+    font-size: 30px
+    font-size: 3.0rem
+    font-weight: 700
+    color: $dark-color
+
+  small
+    display: block
+    font-size: 18px
+    font-size: 1.8rem
+
+// Inscription ---------------------------------------------------------------
+#inscription
+  li
+    font-size: 18px
+    font-size: 1.8rem
+    color: $dark-color;
+    font-weight: 700
+
+  #game
+    height: 97px
+    padding: 0 0 0 145px
+    background: url(../images/video-game.png) left top no-repeat
+
+  #animation
+    height: 103px
+    padding: 0 0 0 110px
+    background: url(../images/animation.png) left top no-repeat
+
+  #painting
+    height: 97px
+    padding: 0 0 0 100px
+    background: url(../images/paint.png) left top no-repeat
+
+  small
+    font-size: 16px
+    font-size: 1.6rem
+    color: #5a5f65
+    display: block
+    font-weight: 300
+
+// Testimonials --------------------------------------------------------------
+// #testimonials
+
+// Judges --------------------------------------------------------------------
+// #judges
+
+// Sponsors ------------------------------------------------------------------
+// #sponsors
 
 // Invaders ------------------------------------------------------------------
 .playing

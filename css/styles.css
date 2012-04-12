@@ -87,6 +87,11 @@ address {
   zoom: 1;
   margin-right: -4px;
 }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 html {
   font-size: 62.5%;
   height: 100%;
@@ -102,7 +107,7 @@ textarea,
 button {
   font-family: 'pt-sans', 'Helvetica Neue', 'Arial', 'sans-serif';
   line-height: 1.4;
-  color: #333;
+  color: #5d6770;
 }
 a:link,
 a:visited {
@@ -120,6 +125,13 @@ blockquote,
 table,
 figure {
   margin: 0.8em 0;
+}
+.clearfix:after,
+.wrap:after,
+ol:after {
+  display: block;
+  content: '';
+  clear: both;
 }
 hgroup > :first-child {
   margin-bottom: 0.3em;
@@ -140,10 +152,12 @@ h1 {
   margin: 0;
 }
 h2 {
-  color: #333;
-  font-size: 24px;
-  font-size: 2.4rem;
-  margin: 0.8em 0;
+  color: #acafb3;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
 }
 h3 {
   color: #333;
@@ -158,15 +172,39 @@ h4 {
   margin: 1.3em 0;
 }
 .wrap {
+  position: relative;
   width: 934px;
   margin: 0 auto;
 }
-ul {
+section {
+  padding: 2.75em 0;
+}
+ul,
+ol {
   margin: 0;
+  padding: 0;
 }
 li {
   list-style-type: none;
   display: inline;
+}
+em {
+  font-style: normal;
+  font-weight: 700;
+}
+.dark {
+  color: #1b1d1f;
+}
+.col {
+  float: left;
+  margin: 0;
+  padding: 0 2%;
+}
+.col-2 {
+  width: 50%;
+}
+.col-3 {
+  width: 33.3%;
 }
 header {
   overflow: hidden;
@@ -182,7 +220,6 @@ header a:link:hover {
   color: #fff;
 }
 header .wrap {
-  position: relative;
   height: 100%;
 }
 header figure {
@@ -238,6 +275,7 @@ header nav li + li {
   margin: 0 0 0 1em;
 }
 header .hint {
+  display: none;
   position: absolute;
   top: 12px;
   right: 18px;
@@ -257,6 +295,45 @@ header .hint li.valid {
 }
 header .hint li + li {
   margin: 0 0 0 0.3em;
+}
+#intro div.col {
+  font-size: 30px;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1b1d1f;
+}
+#intro small {
+  display: block;
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+#inscription li {
+  font-size: 18px;
+  font-size: 1.8rem;
+  color: #1b1d1f;
+  font-weight: 700;
+}
+#inscription #game {
+  height: 97px;
+  padding: 0 0 0 145px;
+  background: url("../images/video-game.png") left top no-repeat;
+}
+#inscription #animation {
+  height: 103px;
+  padding: 0 0 0 110px;
+  background: url("../images/animation.png") left top no-repeat;
+}
+#inscription #painting {
+  height: 97px;
+  padding: 0 0 0 100px;
+  background: url("../images/paint.png") left top no-repeat;
+}
+#inscription small {
+  font-size: 16px;
+  font-size: 1.6rem;
+  color: #5a5f65;
+  display: block;
+  font-weight: 300;
 }
 .playing h1,
 .playing nav,
