@@ -84,6 +84,7 @@
     }
 
     Invaders.prototype.init = function() {
+      $('.key').remove();
       globals.header.addClass('playing');
       return globals.figure.addClass('ship');
     };

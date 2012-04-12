@@ -62,6 +62,7 @@ class Bivouac.Invaders
     this.animloop()
 
   init: ->
+    $('.key').remove()
     globals.header.addClass 'playing'
     globals.figure.addClass 'ship'
 
