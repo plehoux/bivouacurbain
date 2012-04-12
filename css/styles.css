@@ -296,44 +296,73 @@ header .hint li.valid {
 header .hint li + li {
   margin: 0 0 0 0.3em;
 }
+#intro {
+  color: #1b1d1f;
+}
 #intro div.col {
   font-size: 30px;
   font-size: 3rem;
-  font-weight: 700;
-  color: #1b1d1f;
+  line-height: 1.1;
+}
+#intro p {
+  padding-top: 0.7em;
 }
 #intro small {
   display: block;
   font-size: 18px;
   font-size: 1.8rem;
+  line-height: 1.3;
+  padding: 1em 0 0;
 }
 #inscription li {
   font-size: 18px;
   font-size: 1.8rem;
   color: #1b1d1f;
   font-weight: 700;
+  padding: 1em 0 0;
 }
-#inscription #game {
-  height: 97px;
-  padding: 0 0 0 145px;
-  background: url("../images/video-game.png") left top no-repeat;
-}
-#inscription #animation {
-  height: 103px;
-  padding: 0 0 0 110px;
-  background: url("../images/animation.png") left top no-repeat;
-}
-#inscription #painting {
-  height: 97px;
-  padding: 0 0 0 100px;
-  background: url("../images/paint.png") left top no-repeat;
-}
-#inscription small {
+#inscription li small {
   font-size: 16px;
   font-size: 1.6rem;
   color: #5a5f65;
   display: block;
-  font-weight: 300;
+  font-weight: 400;
+}
+#inscription #game {
+  height: 97px;
+  padding-left: 145px;
+  background: url("../images/video-game.png") left top no-repeat;
+}
+#inscription #animation {
+  height: 103px;
+  padding-left: 110px;
+  background: url("../images/animation.png") left top no-repeat;
+}
+#inscription #painting {
+  height: 97px;
+  padding-left: 100px;
+  background: url("../images/paint.png") left top no-repeat;
+}
+#inscription a {
+  display: block;
+  width: 55%;
+  margin: 2em auto 0;
+  color: #fff;
+  font-size: 24px;
+  font-size: 2.4rem;
+  text-align: center;
+  padding: 0.7em 0;
+  background-color: #e4032e;
+  border-radius: 65px;
+}
+#inscription .wrap > small {
+  display: block;
+  width: 55%;
+  margin: 0 auto;
+  font-size: 12px;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1em 5em 0;
 }
 .playing h1,
 .playing nav,

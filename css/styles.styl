@@ -1,7 +1,7 @@
 @import "utils/_reset"
 
 // Variables -----------------------------------------------------------------
-$main-color = #e4032e
+$red-color = #e4032e
 $dark-color = #1b1d1f
 
 // Base ----------------------------------------------------------------------
@@ -20,8 +20,8 @@ body, legend, input, textarea, button
   line-height: 1.4
   color: #5d6770
 
-a:link, a:visited { color: $main-color }
-a:focus, a:link:hover { color: $main-color }
+a:link, a:visited { color: $red-color }
+a:focus, a:link:hover { color: $red-color }
 
 p, ul, ol, dl, blockquote, table, figure { margin: .8em 0 }
 
@@ -158,22 +158,28 @@ header
 
       &.valid
         background-color: #fff
-        color: $main-color
+        color: $red-color
 
     li + li { margin: 0 0 0 .3em }
 
 // Intro ---------------------------------------------------------------------
 #intro
+  color: $dark-color
+
   div.col
     font-size: 30px
     font-size: 3.0rem
-    font-weight: 700
-    color: $dark-color
+    line-height: 1.1
+
+  p
+    padding-top: .7em
 
   small
     display: block
     font-size: 18px
     font-size: 1.8rem
+    line-height: 1.3
+    padding: 1em 0 0
 
 // Inscription ---------------------------------------------------------------
 #inscription
@@ -182,28 +188,50 @@ header
     font-size: 1.8rem
     color: $dark-color;
     font-weight: 700
+    padding: 1em 0 0
+
+    small
+      font-size: 16px
+      font-size: 1.6rem
+      color: #5a5f65
+      display: block
+      font-weight: 400
 
   #game
     height: 97px
-    padding: 0 0 0 145px
+    padding-left: 145px
     background: url(../images/video-game.png) left top no-repeat
 
   #animation
     height: 103px
-    padding: 0 0 0 110px
+    padding-left: 110px
     background: url(../images/animation.png) left top no-repeat
 
   #painting
     height: 97px
-    padding: 0 0 0 100px
+    padding-left: 100px
     background: url(../images/paint.png) left top no-repeat
 
-  small
-    font-size: 16px
-    font-size: 1.6rem
-    color: #5a5f65
+  a
     display: block
-    font-weight: 300
+    width: 55%
+    margin: 2em auto 0
+    color: #fff
+    font-size: 24px
+    font-size: 2.4rem
+    text-align: center
+    padding: .7em 0
+    background-color: $red-color
+    border-radius: 65px
+
+  .wrap > small
+    display: block
+    width: 55%
+    margin: 0 auto
+    font-size: 12px
+    font-size: 1.2rem
+    text-align: center
+    padding: 1em 5em 0
 
 // Testimonials --------------------------------------------------------------
 // #testimonials
