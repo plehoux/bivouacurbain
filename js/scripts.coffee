@@ -33,6 +33,7 @@ class Bivouac.App
 
   onControllerButtonClick: (e) =>
     value = $(e.currentTarget).data('value')
+
     if value == @pattern[@keysIndex]
       @hint.children().eq(@keysIndex).addClass 'valid'
       @keysIndex++
