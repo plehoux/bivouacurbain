@@ -17,10 +17,10 @@
       this.animloop = __bind(this.animloop, this);      this.header = $('header');
       this.container = this.header.find('figure');
       this.ship = this.container.children('img');
-      this.bullets = {};
-      this.bulletsIndex = 1;
+      this.bullets = [];
       this.offset = 0;
       this.speed = 0;
+      this.isShooting = false;
       this.isGoing = {
         left: false,
         right: false
@@ -47,7 +47,7 @@
           case 39:
             return _this.isGoing.right = true;
           case 32:
-            return _this.shootBullet();
+            return _this.isShooting = true;
         }
       });
       return $body.bind('keyup', function(e) {
@@ -56,6 +56,8 @@
             return _this.isGoing.left = false;
           case 39:
             return _this.isGoing.right = false;
+          case 32:
+            return _this.isShooting = false;
         }
       });
     };
@@ -65,7 +67,11 @@
       bullet = $('<span class="bullet"></span>');
       bullet.css('-webkit-transform', "translate3d(0," + this.offset + "px,0)");
       this.container.append(bullet);
-      return this.bulletsIndex++;
+      return this.bullets.push({
+        elem: bullet,
+        offsetX: 0,
+        offsetY: this.offset
+      });
     };
 
     Invaders.prototype.animloop = function() {
@@ -74,6 +80,12 @@
     };
 
     Invaders.prototype.render = function() {
+      this.moveShip();
+      this.moveBullets();
+      if (this.isShooting && this.bullets.length < 1) return this.shootBullet();
+    };
+
+    Invaders.prototype.moveShip = function() {
       if (this.isGoing.left && !this.isGoing.right) this.speed -= 2;
       if (this.isGoing.right && !this.isGoing.left) this.speed += 2;
       if (this.speed > 50) this.speed = 50;
@@ -84,6 +96,19 @@
       }
       this.offset += this.speed;
       return this.ship.css('-webkit-transform', "translate3d(0," + this.offset + "px,0)");
+    };
+
+    Invaders.prototype.moveBullets = function() {
+      var bullet, currentTop;
+      if (!(bullet = this.bullets[0])) return;
+      currentTop = bullet.elem.offset().top;
+      if (currentTop < -38) {
+        bullet.elem.remove();
+        return this.bullets.pop();
+      } else {
+        bullet.offsetX += 30;
+        return bullet.elem.css('-webkit-transform', "translate3d(" + bullet.offsetX + "px," + bullet.offsetY + "px,0)");
+      }
     };
 
     return Invaders;

@@ -13,10 +13,10 @@ class Bivouac.Invaders
     @header = $('header')
     @container = @header.find('figure')
     @ship = @container.children('img')
-    @bullets = {}
-    @bulletsIndex = 1
+    @bullets = []
     @offset = 0
     @speed = 0
+    @isShooting = false
     @isGoing =
       left: false
       right: false
@@ -38,25 +38,35 @@ class Bivouac.Invaders
       switch e.keyCode
         when 37 then @isGoing.left = true
         when 39 then @isGoing.right = true
-        when 32 then this.shootBullet()
+        when 32 then @isShooting = true
 
     $body.bind 'keyup', (e) =>
       switch e.keyCode
         when 37 then @isGoing.left = false
         when 39 then @isGoing.right = false
+        when 32 then @isShooting = false
 
   shootBullet: ->
     bullet = $('<span class="bullet"></span>')
     bullet.css '-webkit-transform', "translate3d(0,#{@offset}px,0)"
     @container.append bullet
 
-    @bulletsIndex++
+    @bullets.push
+      elem: bullet
+      offsetX: 0
+      offsetY: @offset
 
   animloop: =>
     requestAnimationFrame(this.animloop)
     this.render()
 
+  # Render tick management
   render: ->
+    this.moveShip()
+    this.moveBullets()
+    this.shootBullet() if @isShooting && @bullets.length < 1
+
+  moveShip: ->
     @speed -= 2 if @isGoing.left && !@isGoing.right
     @speed += 2 if @isGoing.right && !@isGoing.left
     @speed = 50 if @speed > 50
@@ -68,6 +78,17 @@ class Bivouac.Invaders
 
     @offset += @speed
     @ship.css '-webkit-transform', "translate3d(0,#{@offset}px,0)"
+
+  moveBullets: ->
+    return if !bullet = @bullets[0]
+    currentTop = bullet.elem.offset().top
+
+    if currentTop < -38
+      bullet.elem.remove()
+      @bullets.pop()
+    else
+      bullet.offsetX += 30
+      bullet.elem.css '-webkit-transform', "translate3d(#{bullet.offsetX}px,#{bullet.offsetY}px,0)"
 
 
 new Bivouac.App()
