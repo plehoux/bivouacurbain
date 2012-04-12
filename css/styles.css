@@ -161,6 +161,13 @@ h4 {
   width: 934px;
   margin: 0 auto;
 }
+ul {
+  margin: 0;
+}
+li {
+  list-style-type: none;
+  display: inline;
+}
 header {
   overflow: hidden;
   height: 510px;
@@ -182,6 +189,30 @@ header figure {
   position: absolute;
   left: 0;
   bottom: -47px;
+  margin: 0;
+}
+header figure .key {
+  position: absolute;
+  display: block;
+  width: 19px;
+  height: 19px;
+  border-radius: 19px;
+}
+header figure .key:nth-child(2) {
+  bottom: 178px;
+  right: 140px;
+}
+header figure .key:nth-child(3) {
+  bottom: 161px;
+  right: 123px;
+}
+header figure .key:nth-child(4) {
+  bottom: 145px;
+  right: 140px;
+}
+header figure .key:nth-child(5) {
+  bottom: 161px;
+  right: 156px;
 }
 header h1 {
   position: absolute;
@@ -200,21 +231,36 @@ header nav {
   right: 18px;
   text-transform: uppercase;
 }
-header nav ul {
-  margin: 0;
-}
-header nav li {
-  list-style-type: none;
-  display: inline;
-}
 header nav li:first-child {
   font-weight: 700;
 }
 header nav li + li {
   margin: 0 0 0 1em;
 }
+header .hint {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+}
+header .hint li {
+  display: block;
+  float: left;
+  width: 24px;
+  height: 24px;
+  color: #fff;
+  text-align: center;
+  border-radius: 24px;
+}
+header .hint li.valid {
+  background-color: #fff;
+  color: #e4032e;
+}
+header .hint li + li {
+  margin: 0 0 0 0.3em;
+}
 .playing h1,
-.playing nav {
+.playing nav,
+.playing .hint {
   opacity: 0;
   -webkit-transition: opacity 0.4s ease-out;
 }

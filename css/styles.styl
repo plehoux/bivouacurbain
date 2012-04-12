@@ -57,6 +57,13 @@ h4
   width: 934px
   margin: 0 auto
 
+ul
+  margin: 0
+
+li
+  list-style-type: none
+  display: inline
+
 // Header --------------------------------------------------------------------
 header
   overflow: hidden
@@ -73,6 +80,18 @@ header
   figure
     position: absolute
     left: 0; bottom: -47px
+    margin: 0
+
+    .key
+      position: absolute
+      display: block
+      width: 19px; height: 19px
+      border-radius: 19px
+
+      &:nth-child(2) { bottom: 178px; right: 140px }
+      &:nth-child(3) { bottom: 161px; right: 123px }
+      &:nth-child(4) { bottom: 145px; right: 140px }
+      &:nth-child(5) { bottom: 161px; right: 156px }
 
   h1
     position: absolute
@@ -88,17 +107,30 @@ header
     bottom: 1.5em; right: 18px
     text-transform: uppercase
 
-    ul { margin: 0 }
-    li
-      list-style-type: none
-      display: inline
-
     li:first-child { font-weight: 700 }
     li + li { margin: 0 0 0 1em }
 
+  .hint
+    position: absolute
+    top: 12px; right: 18px
+
+    li
+      display: block
+      float: left
+      width: 24px; height: 24px
+      color: #fff
+      text-align: center
+      border-radius: 24px
+
+      &.valid
+        background-color: #fff
+        color: $main-color
+
+    li + li { margin: 0 0 0 .3em }
+
 // Invaders ------------------------------------------------------------------
 .playing
-  h1, nav
+  h1, nav, .hint
     opacity: 0
     -webkit-transition: opacity .4s ease-out
 
