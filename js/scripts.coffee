@@ -1,7 +1,7 @@
 Bivouac ?= {}
 globals = {}
-globals.header = $('header')
-globals.figure = $('figure')
+globals.$header = $('header')
+globals.$figure = $('figure')
 
 # App class
 class Bivouac.App
@@ -23,13 +23,13 @@ class Bivouac.App
       li = $("<li>#{key}</li>")
       @hint.append li
 
-    globals.header.children('.wrap').prepend @hint
+    globals.$header.children('.wrap').prepend @hint
 
   addControllerButtons: ->
     for key in @keys
       btn = $('<a class="key" href="javascript:"></a>').data('value', key)
       btn.on 'click', this.onControllerButtonClick
-      globals.figure.append btn
+      globals.$figure.append btn
 
   onControllerButtonClick: (e) =>
     value = $(e.currentTarget).data('value')
@@ -47,7 +47,7 @@ class Bivouac.App
 class Bivouac.Invaders
 
   constructor: ->
-    @ship = globals.figure.children('img')
+    @ship = globals.$figure.children('img')
     @bullets = []
     @offset = 0
     @speed = 0
@@ -63,8 +63,8 @@ class Bivouac.Invaders
 
   init: ->
     $('.key').remove()
-    globals.header.addClass 'playing'
-    globals.figure.addClass 'ship'
+    globals.$header.addClass 'playing'
+    globals.$figure.addClass 'ship'
 
   initKeyboard: ->
     $body = $('body')
@@ -85,7 +85,7 @@ class Bivouac.Invaders
   shootBullet: ->
     bullet = $('<span class="bullet"></span>')
     bullet.css '-webkit-transform', "translate3d(0,#{@offset}px,0)"
-    globals.figure.append bullet
+    globals.$figure.append bullet
 
     @bullets.push
       elem: bullet

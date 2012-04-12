@@ -6,9 +6,9 @@
 
   globals = {};
 
-  globals.header = $('header');
+  globals.$header = $('header');
 
-  globals.figure = $('figure');
+  globals.$figure = $('figure');
 
   Bivouac.App = (function() {
 
@@ -33,7 +33,7 @@
         li = $("<li>" + key + "</li>");
         this.hint.append(li);
       }
-      return globals.header.children('.wrap').prepend(this.hint);
+      return globals.$header.children('.wrap').prepend(this.hint);
     };
 
     App.prototype.addControllerButtons = function() {
@@ -44,7 +44,7 @@
         key = _ref[_i];
         btn = $('<a class="key" href="javascript:"></a>').data('value', key);
         btn.on('click', this.onControllerButtonClick);
-        _results.push(globals.figure.append(btn));
+        _results.push(globals.$figure.append(btn));
       }
       return _results;
     };
@@ -69,7 +69,7 @@
   Bivouac.Invaders = (function() {
 
     function Invaders() {
-      this.animloop = __bind(this.animloop, this);      this.ship = globals.figure.children('img');
+      this.animloop = __bind(this.animloop, this);      this.ship = globals.$figure.children('img');
       this.bullets = [];
       this.offset = 0;
       this.speed = 0;
@@ -85,8 +85,8 @@
 
     Invaders.prototype.init = function() {
       $('.key').remove();
-      globals.header.addClass('playing');
-      return globals.figure.addClass('ship');
+      globals.$header.addClass('playing');
+      return globals.$figure.addClass('ship');
     };
 
     Invaders.prototype.initKeyboard = function() {
@@ -120,7 +120,7 @@
       var bullet;
       bullet = $('<span class="bullet"></span>');
       bullet.css('-webkit-transform', "translate3d(0," + this.offset + "px,0)");
-      globals.figure.append(bullet);
+      globals.$figure.append(bullet);
       return this.bullets.push({
         elem: bullet,
         offsetX: 0,
