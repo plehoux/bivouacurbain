@@ -1,11 +1,66 @@
 (function() {
-  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+  var globals,
+    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   if (typeof Bivouac === "undefined" || Bivouac === null) Bivouac = {};
 
+  globals = {};
+
+  globals.header = $('header');
+
+  globals.figure = $('figure');
+
   Bivouac.App = (function() {
 
-    function App() {}
+    function App() {
+      this.onControllerButtonClick = __bind(this.onControllerButtonClick, this);      this.keys = ['X', 'A', 'B', 'Y'];
+      this.keysIndex = 0;
+      this.addHint();
+      this.addControllerButtons();
+    }
+
+    App.prototype.addHint = function() {
+      var i, key, li, random, _i, _len, _ref;
+      this.pattern = [];
+      for (i = 0; i <= 9; i++) {
+        random = Math.floor(Math.random() * this.keys.length);
+        this.pattern.push(this.keys[random]);
+      }
+      this.hint = $('<ul class="hint"></ul>');
+      _ref = this.pattern;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        key = _ref[_i];
+        li = $("<li>" + key + "</li>");
+        this.hint.append(li);
+      }
+      return globals.header.children('.wrap').prepend(this.hint);
+    };
+
+    App.prototype.addControllerButtons = function() {
+      var btn, key, _i, _len, _ref, _results;
+      _ref = this.keys;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        key = _ref[_i];
+        btn = $('<a class="key" href="javascript:"></a>').data('value', key);
+        btn.on('click', this.onControllerButtonClick);
+        _results.push(globals.figure.append(btn));
+      }
+      return _results;
+    };
+
+    App.prototype.onControllerButtonClick = function(e) {
+      var value;
+      value = $(e.currentTarget).data('value');
+      if (value === this.pattern[this.keysIndex]) {
+        this.hint.children().eq(this.keysIndex).addClass('valid');
+        this.keysIndex++;
+        if (this.keysIndex === this.pattern.length) return new Bivouac.Invaders;
+      } else {
+        this.hint.children('.valid').removeClass('valid');
+        return this.keysIndex = 0;
+      }
+    };
 
     return App;
 
@@ -14,9 +69,7 @@
   Bivouac.Invaders = (function() {
 
     function Invaders() {
-      this.animloop = __bind(this.animloop, this);      this.header = $('header');
-      this.container = this.header.find('figure');
-      this.ship = this.container.children('img');
+      this.animloop = __bind(this.animloop, this);      this.ship = globals.figure.children('img');
       this.bullets = [];
       this.offset = 0;
       this.speed = 0;
@@ -31,8 +84,8 @@
     }
 
     Invaders.prototype.init = function() {
-      this.header.addClass('playing');
-      return this.container.addClass('ship');
+      globals.header.addClass('playing');
+      return globals.figure.addClass('ship');
     };
 
     Invaders.prototype.initKeyboard = function() {
@@ -66,7 +119,7 @@
       var bullet;
       bullet = $('<span class="bullet"></span>');
       bullet.css('-webkit-transform', "translate3d(0," + this.offset + "px,0)");
-      this.container.append(bullet);
+      globals.figure.append(bullet);
       return this.bullets.push({
         elem: bullet,
         offsetX: 0,

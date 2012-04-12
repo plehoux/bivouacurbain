@@ -1,18 +1,52 @@
 Bivouac ?= {}
+globals = {}
+globals.header = $('header')
+globals.figure = $('figure')
 
 # App class
 class Bivouac.App
 
   constructor: ->
+    @keys = ['X', 'A', 'B', 'Y']
+    @keysIndex = 0
+    this.addHint()
+    this.addControllerButtons()
+
+  addHint: ->
+    @pattern = []
+    for i in [0..9]
+      random = Math.floor Math.random() * @keys.length
+      @pattern.push @keys[random]
+
+    @hint = $('<ul class="hint"></ul>')
+    for key in @pattern
+      li = $("<li>#{key}</li>")
+      @hint.append li
+
+    globals.header.children('.wrap').prepend @hint
+
+  addControllerButtons: ->
+    for key in @keys
+      btn = $('<a class="key" href="javascript:"></a>').data('value', key)
+      btn.on 'click', this.onControllerButtonClick
+      globals.figure.append btn
+
+  onControllerButtonClick: (e) =>
+    value = $(e.currentTarget).data('value')
+    if value == @pattern[@keysIndex]
+      @hint.children().eq(@keysIndex).addClass 'valid'
+      @keysIndex++
+      new Bivouac.Invaders if @keysIndex == @pattern.length
+    else
+      @hint.children('.valid').removeClass('valid')
+      @keysIndex = 0
 
 
 # Invaders game class
 class Bivouac.Invaders
 
   constructor: ->
-    @header = $('header')
-    @container = @header.find('figure')
-    @ship = @container.children('img')
+    @ship = globals.figure.children('img')
     @bullets = []
     @offset = 0
     @speed = 0
@@ -27,8 +61,8 @@ class Bivouac.Invaders
     this.animloop()
 
   init: ->
-    @header.addClass 'playing'
-    @container.addClass 'ship'
+    globals.header.addClass 'playing'
+    globals.figure.addClass 'ship'
 
   initKeyboard: ->
     $body = $('body')
@@ -49,7 +83,7 @@ class Bivouac.Invaders
   shootBullet: ->
     bullet = $('<span class="bullet"></span>')
     bullet.css '-webkit-transform', "translate3d(0,#{@offset}px,0)"
-    @container.append bullet
+    globals.figure.append bullet
 
     @bullets.push
       elem: bullet
