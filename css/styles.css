@@ -334,7 +334,11 @@ header .hint li + li {
   line-height: 1.3;
   padding: 1em 0 0;
 }
+#inscription ol {
+  padding: 0 2%;
+}
 #inscription li {
+  float: left;
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 1.2;
@@ -392,6 +396,7 @@ header .hint li + li {
   position: relative;
   padding-right: 4.6em;
   background: url("../images/blockquote-bg.png") left bottom no-repeat;
+  -webkit-background-size: 90% 79px;
 }
 #testimonials blockquote:after {
   position: absolute;
@@ -417,7 +422,7 @@ header .hint li + li {
   color: #1b1d1f;
 }
 #judges figure {
-  padding-right: 3.2em;
+  padding-right: 5.5%;
 }
 #judges figcaption p {
   min-height: 15em;
@@ -578,4 +583,31 @@ header .hint li + li {
   background-color: #fff;
   border-radius: 20px;
   margin: -20px 0 0 0;
+}
+@media (max-width: 960px) {
+  .wrap {
+    width: 730px;
+  }
+  #intro div.col {
+    padding-right: 0.9em;
+  }
+  #intro p {
+    padding-right: 1.9em;
+  }
+  #inscription #game {
+    padding-left: 135px;
+  }
+  #inscription #animation {
+    position: relative;
+    left: 25px;
+  }
+  #inscription #painting {
+    float: right;
+    width: 28%;
+  }
+  #inscription #game,
+  #inscription #animation,
+  #inscription #painting {
+    padding-right: 0;
+  }
 }

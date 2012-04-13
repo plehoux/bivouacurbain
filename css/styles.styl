@@ -199,7 +199,11 @@ header
 
 // Inscription ---------------------------------------------------------------
 #inscription
+  ol
+    padding: 0 2%
+
   li
+    float: left
     font-size: 18px
     font-size: 1.8rem
     line-height: 1.2
@@ -260,6 +264,7 @@ header
     position: relative
     padding-right: 4.6em
     background: url(../images/blockquote-bg.png) left bottom no-repeat
+    -webkit-background-size: 90% 79px
 
     &:after
       position: absolute
@@ -289,7 +294,7 @@ header
     @extend .newline
 
   figure
-    padding-right: 3.2em
+    padding-right: 5.5%
 
   figcaption p
     min-height: 15em
@@ -402,3 +407,16 @@ header
     background-color: #fff
     border-radius: 20px
     margin: -20px 0 0 0
+
+// Media Queries -------------------------------------------------------------
+@media (max-width: 960px)
+  .wrap { width: 730px }
+
+  #intro div.col { padding-right: .9em }
+  #intro p { padding-right: 1.9em }
+
+  #inscription
+    #game { padding-left: 135px }
+    #animation { position: relative; left: 25px }
+    #painting { float: right; width: 28% }
+    #game, #animation, #painting { padding-right: 0 }
