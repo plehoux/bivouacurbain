@@ -1,7 +1,7 @@
 Bivouac ?= {}
 globals = {}
 globals.$header = $('header')
-globals.$figure = $('figure')
+globals.$figure = globals.$header.find('figure')
 
 # App class
 class Bivouac.App
@@ -74,7 +74,7 @@ class Bivouac.Invaders
       switch e.keyCode
         when 37 then @isGoing.left = true
         when 39 then @isGoing.right = true
-        when 32 then @isShooting = true
+        when 32 then @isShooting = true; return false
 
     $body.bind 'keyup', (e) =>
       switch e.keyCode

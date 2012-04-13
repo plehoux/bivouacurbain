@@ -8,7 +8,7 @@
 
   globals.$header = $('header');
 
-  globals.$figure = $('figure');
+  globals.$figure = globals.$header.find('figure');
 
   Bivouac.App = (function() {
 
@@ -101,7 +101,8 @@
           case 39:
             return _this.isGoing.right = true;
           case 32:
-            return _this.isShooting = true;
+            _this.isShooting = true;
+            return false;
         }
       });
       return $body.bind('keyup', function(e) {
