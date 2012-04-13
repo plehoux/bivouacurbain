@@ -388,6 +388,7 @@ header .hint li + li {
 }
 #testimonials blockquote {
   position: relative;
+  padding-right: 4.6em;
   background: url("../images/blockquote-bg.png") left bottom no-repeat;
 }
 #testimonials blockquote:after {
@@ -397,7 +398,7 @@ header .hint li + li {
   content: url("../images/blockquote-arrow.png");
 }
 #testimonials blockquote div {
-  padding: 2em 0 0;
+  padding: 2.25em 0 0;
 }
 #testimonials blockquote img,
 #testimonials blockquote p {
