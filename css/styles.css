@@ -203,10 +203,6 @@ li {
   list-style-type: none;
   display: inline;
 }
-em {
-  font-style: normal;
-  font-weight: 700;
-}
 .dark {
   color: #1b1d1f;
 }
