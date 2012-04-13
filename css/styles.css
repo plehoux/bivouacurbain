@@ -134,6 +134,11 @@ ol:after,
   content: '';
   clear: both;
 }
+.newline:after,
+#judges a:after {
+  content: '\A';
+  white-space: pre;
+}
 hgroup > :first-child {
   margin-bottom: 0.3em;
 }
@@ -147,7 +152,7 @@ h4 {
   line-height: 1.1;
 }
 h1 {
-  color: #333;
+  color: #1b1d1f;
   font-size: 32px;
   font-size: 3.2rem;
   margin: 0;
@@ -161,16 +166,10 @@ h2 {
   text-align: center;
 }
 h3 {
-  color: #333;
-  font-size: 19px;
-  font-size: 1.9rem;
+  color: #1b1d1f;
+  font-size: 24px;
+  font-size: 2.4rem;
   margin: 1em 0;
-}
-h4 {
-  color: #333;
-  font-size: 16px;
-  font-size: 1.6rem;
-  margin: 1.3em 0;
 }
 .wrap {
   position: relative;
@@ -391,6 +390,56 @@ header .hint li + li {
   line-height: 1;
   font-weight: 700;
   color: #1b1d1f;
+}
+#judges figcaption p {
+  min-height: 15em;
+}
+#judges div.col {
+  color: #1b1d1f;
+}
+#judges div.col span {
+  font-size: 24px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  float: left;
+  padding: 0.5em 0 0;
+}
+#judges div.col ul,
+#judges div.col li {
+  float: left;
+}
+#judges div.col ul {
+  padding: 0 0 0 3.75em;
+}
+#judges div.col li + li {
+  position: relative;
+  padding: 0 0 0 5.4em;
+}
+#judges div.col li + li:after {
+  display: block;
+  content: '+';
+  position: absolute;
+  top: 50%;
+  left: 35px;
+  font-weight: 700;
+  font-size: 21px;
+  font-size: 2.1rem;
+  line-height: 0;
+}
+#judges div.col h3 {
+  margin: 0;
+  float: left;
+  font-size: 16px;
+  font-size: 1.6rem;
+  padding: 0.85em 0 0 1.1em;
+}
+#judges div.col small {
+  display: block;
+  color: #7d8790;
+  font-weight: 400;
+}
+#judges div.col img {
+  float: left;
 }
 .playing h1,
 .playing nav,

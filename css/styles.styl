@@ -31,6 +31,11 @@ p, ul, ol, dl, blockquote, table, figure { margin: .8em 0 }
     content: ''
     clear: both
 
+.newline
+  &:after
+    content: '\A'
+    white-space: pre
+
 // Headings ------------------------------------------------------------------
 hgroup > :first-child { margin-bottom: .3em }
 hgroup > :first-child + * { margin-top: .3em }
@@ -38,7 +43,7 @@ hgroup > :first-child + * { margin-top: .3em }
 h1, h2, h3, h4 { line-height: 1.1 }
 
 h1
-  color: #333
+  color: $dark-color
   font-size: 32px
   font-size: 3.2rem
   margin: 0
@@ -52,16 +57,10 @@ h2
   text-align: center
 
 h3
-  color: #333
-  font-size: 19px
-  font-size: 1.9rem
+  color: $dark-color
+  font-size: 24px
+  font-size: 2.4rem
   margin: 1em 0
-
-h4
-  color: #333
-  font-size: 16px
-  font-size: 1.6rem
-  margin: 1.3em 0
 
 // Layout --------------------------------------------------------------------
 .wrap
@@ -262,7 +261,52 @@ header
       color: $dark-color
 
 // Judges --------------------------------------------------------------------
-// #judges
+#judges
+  a
+    @extend .newline
+
+  figcaption p
+    min-height: 15em
+
+  div.col
+    color: $dark-color
+
+    span
+      font-size: 24px
+      font-size: 2.4rem
+      font-weight: 700
+      float: left
+      padding: .5em 0 0
+
+    ul, li { float: left }
+    ul { padding: 0 0 0 3.75em }
+    li + li
+      position: relative
+      padding: 0 0 0 5.4em
+
+      &:after
+        display: block
+        content: '+'
+        position: absolute
+        top: 50%; left: 35px
+        font-weight: 700
+        font-size: 21px
+        font-size: 2.1rem
+        line-height: 0
+
+    h3
+      margin: 0
+      float: left
+      font-size: 16px
+      font-size: 1.6rem
+      padding: .85em 0 0 1.1em
+
+    small
+      display: block
+      color: #7d8790
+      font-weight: 400
+
+    img { float: left }
 
 // Sponsors ------------------------------------------------------------------
 // #sponsors
