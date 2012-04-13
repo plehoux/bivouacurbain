@@ -321,9 +321,11 @@ header .hint li + li {
   font-size: 30px;
   font-size: 3rem;
   line-height: 1.1;
+  padding-right: 1.5em;
 }
 #intro p {
   padding-top: 0.7em;
+  padding-right: 2em;
 }
 #intro small {
   display: block;
