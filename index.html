@@ -7,12 +7,12 @@
     <script src="http://use.typekit.com/xyj6mgi.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
   </head>
-  <body>
+  <body itemscope itemtype="http://schema.org/Event">
 
     <header>
       <div class="wrap">
-        <figure><img src="images/bivouac-logo.png" alt="Bivouac Boulevard Scion"></figure>
-        <h1>Bivouac Boulevard Scion</h1>
+        <figure><img itemprop="image" src="images/bivouac-logo.png" alt="Bivouac Boulevard Scion"></figure>
+        <h1 itemprop="name">Bivouac Boulevard Scion</h1>
         <nav>
           <ul>
             <li><a href="#">Inscription</a></li>
@@ -24,11 +24,21 @@
       </div>
     </header>
 
-    <section id="intro">
+    <section id="intro" itemprop="description">
       <div class="wrap">
         <div class="col col-2">
           Le plus gros campement de création numérique au monde!
-          <small>Du 14 au 17 juin au sur le quai de l’Espace 400e à Québec et en direct sur le web!</small>
+          <small>
+            Du <time itemprop="startDate" datetime="2012-06-14">14</time>
+            au <time itemprop="endDate" datetime="2012-06-17">17 juin</time>
+            <span itemprop="location" itemscope itemtype="http://schema.org/Place">sur le quai de
+              l’<span itemprop="name">Espace 400<sup>e</sup></span> à
+              <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span itemprop="addressRegion">Québec</span>
+              </span>
+              <link itemprop="maps" href="http://maps.google.com/maps/place?cid=9473829206945049037">
+            </span>et en direct sur le web!
+          </small>
         </div>
         <p class="col col-2">
           Le Bivouac c’est <em>48 heures</em> pour <em>créer un jeu vidéo, un court-métrage 2D/3D</em> ou une <em>peinture numérique</em>! Les participants courent la chance de gagner <em>plus de 10 000 en prix</em>. Le dimanche 17 juin toute la ville de Québec est invitée à venir essayer les créations et assister à leur présentation sur scène!
