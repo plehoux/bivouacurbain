@@ -99,6 +99,9 @@ html {
 body {
   font-size: 16px;
   font-size: 1.6rem;
+  -webkit-hyphens: auto;
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 5;
 }
 body,
 legend,
@@ -421,7 +424,7 @@ header .hint li + li {
   padding-right: 5.5%;
 }
 #judges figcaption p {
-  min-height: 15em;
+  min-height: 16.8em;
 }
 #judges div.col {
   color: #1b1d1f;
