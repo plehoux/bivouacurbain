@@ -181,7 +181,7 @@ h3 {
 }
 section {
   position: relative;
-  padding: 2.75em 0 2.4em;
+  padding: 2.75em 0 3.65em;
 }
 section:before {
   z-index: -1;
@@ -372,6 +372,7 @@ header .hint li + li {
   padding: 0.7em 0;
   background-color: #e4032e;
   border-radius: 65px;
+  -webkit-box-shadow: 0 9px 7px rgba(27,42,78,0.05);
 }
 #inscription .wrap > small {
   display: block;
@@ -414,6 +415,7 @@ header .hint li + li {
 }
 #judges div.col {
   color: #1b1d1f;
+  padding-top: 5.5em;
 }
 #judges div.col span {
   font-size: 24px;
