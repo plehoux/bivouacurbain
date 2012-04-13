@@ -414,6 +414,9 @@ header .hint li + li {
   font-weight: 700;
   color: #1b1d1f;
 }
+#judges figure {
+  padding-right: 3.2em;
+}
 #judges figcaption p {
   min-height: 15em;
 }
