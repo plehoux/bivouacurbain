@@ -58,13 +58,22 @@ class Bivouac.Invaders
 
     this.init()
     this.initKeyboard()
+    this.addEnemies()
 
-    this.animloop()
+    setInterval =>
+      this.render()
+    , 16
 
+  # Initialization
   init: ->
     $('.key').remove()
     globals.$header.addClass 'playing'
     globals.$figure.addClass 'ship'
+    
+    window.onblur = (e) =>
+      @isGoing.left = false
+      @isGoing.right = false
+      @isShooting = false
 
   initKeyboard: ->
     $body = $('body')
@@ -82,6 +91,30 @@ class Bivouac.Invaders
         when 39 then @isGoing.right = false
         when 32 then @isShooting = false
 
+  # Render management
+  render: ->
+    this.moveShip()
+    this.moveBullets()
+    this.shootBullet() if @isShooting && @bullets.length < 1
+
+  moveShip: ->
+    shipPosition = @ship.offset()
+    @speed -= 3 if @isGoing.left && !@isGoing.right
+    @speed += 3 if @isGoing.right && !@isGoing.left
+    @speed = 51 if @speed > 51
+    @speed = -51 if @speed < -51
+
+    if !@isGoing.left && !@isGoing.right || @isGoing.left && @isGoing.right
+      @speed -= 3 if @speed > 0
+      @speed += 3 if @speed < 0
+
+    if shipPosition.left < 0 && @speed < 0 then @speed = 0
+    if shipPosition.left + 140 > window.innerWidth && @speed > 0 then @speed = 0
+
+    @offset += @speed
+    @ship.css '-webkit-transform', "translate3d(0,#{@offset}px,0)"
+
+  # Bullets management
   shootBullet: ->
     bullet = $('<span class="bullet"></span>')
     bullet.css '-webkit-transform', "translate3d(0,#{@offset}px,0)"
@@ -92,57 +125,56 @@ class Bivouac.Invaders
       offsetX: 0
       offsetY: @offset
 
-  animloop: =>
-    requestAnimationFrame(this.animloop)
-    this.render()
-
-  # Render tick management
-  render: ->
-    this.moveShip()
-    this.moveBullets()
-    this.shootBullet() if @isShooting && @bullets.length < 1
-
-  moveShip: ->
-    @speed -= 2 if @isGoing.left && !@isGoing.right
-    @speed += 2 if @isGoing.right && !@isGoing.left
-    @speed = 50 if @speed > 50
-    @speed = -50 if @speed < -50
-
-    if !@isGoing.left && !@isGoing.right || @isGoing.left && @isGoing.right
-      @speed -= 2 if @speed > 0
-      @speed += 2 if @speed < 0
-
-    @offset += @speed
-    @ship.css '-webkit-transform', "translate3d(0,#{@offset}px,0)"
-
   moveBullets: ->
     return if !bullet = @bullets[0]
-    currentTop = bullet.elem.offset().top
+    currentPos = bullet.elem.offset()
 
-    if currentTop < -38
+    if currentPos.top < -38
       bullet.elem.remove()
       @bullets.pop()
     else
+      for enemy, i in @enemies
+        pos = enemy.offset()
+        bounds =
+          left: pos.left
+          right: pos.left + enemy.width()
+          bottom: pos.top + enemy.height()
+
+        bottom = enemy.offset().top + enemy.height()
+        if currentPos.top <= bounds.bottom && currentPos.left >= bounds.left && currentPos.left <= bounds.right
+          this.removeBullet()
+          enemy.remove()
+          @enemies.splice i, 1
+          return
+
       bullet.offsetX += 30
       bullet.elem.css '-webkit-transform', "translate3d(#{bullet.offsetX}px,#{bullet.offsetY}px,0)"
+
+  removeBullet: ->
+    return if !bullet = @bullets[0]
+    bullet.elem.remove()
+    @bullets.pop()
+
+  # Enemies management
+  addEnemies: ->
+    @enemies = []
+    enemies = $('<div class="enemies"></div>')
+
+    for i in [1..20]
+      enemy = $('<span class="enemy"></span>')
+      enemy.addClass ['paolo', 'ramiro', 'zach'].random()
+      enemy.css
+        left: 66 * (i % 10)
+        top: 70 * (Math.ceil(i/10) - 1) + 5
+      enemies.append enemy
+      @enemies.push enemy
+
+    globals.$header.children().append enemies
 
 
 new Bivouac.App()
 
 
-# RequestAnimationFrame Polyfill
-# <https://gist.github.com/1579671>
-do ->
-    w = window
-    for vendor in ['ms', 'moz', 'webkit', 'o']
-        break if w.requestAnimationFrame
-        w.requestAnimationFrame = w["#{vendor}RequestAnimationFrame"]
-        w.cancelAnimationFrame = (w["#{vendor}CancelAnimationFrame"] or
-                                  w["#{vendor}CancelRequestAnimationFrame"])
-
-    targetTime = 0
-    w.requestAnimationFrame or= (callback) ->
-        targetTime = Math.max targetTime + 16, currentTime = +new Date
-        w.setTimeout (-> callback +new Date), targetTime - currentTime
-
-    w.cancelAnimationFrame or= (id) -> clearTimeout id
+# Array.random()
+Array::random = ->
+  this[Math.floor(Math.random() * this.length)]
