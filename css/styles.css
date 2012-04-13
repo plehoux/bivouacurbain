@@ -335,13 +335,15 @@ header .hint li + li {
 #inscription li {
   font-size: 18px;
   font-size: 1.8rem;
+  line-height: 1.2;
   color: #1b1d1f;
   font-weight: 700;
-  padding: 1em 0 0;
+  padding: 1em 2em 0;
 }
 #inscription li small {
   font-size: 16px;
   font-size: 1.6rem;
+  line-height: 1.5;
   color: #5a5f65;
   display: block;
   font-weight: 400;
@@ -349,6 +351,7 @@ header .hint li + li {
 #inscription #game {
   height: 97px;
   padding-left: 145px;
+  padding-right: 3em;
   background: url("../images/video-game.png") left top no-repeat;
 }
 #inscription #animation {
