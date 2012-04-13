@@ -129,7 +129,8 @@ figure {
 .clearfix:after,
 .wrap:after,
 ol:after,
-#testimonials blockquote div:after {
+#testimonials blockquote div:after,
+#sponsors ul:after {
   display: block;
   content: '';
   clear: both;
@@ -209,7 +210,7 @@ em {
 header {
   overflow: hidden;
   height: 510px;
-  background: url("../images/header-bg.png") left top repeat;
+  background: url("../images/header-bg.png") center top repeat;
 }
 header a:link,
 header a:visited {
@@ -275,7 +276,6 @@ header nav li + li {
   margin: 0 0 0 1em;
 }
 header .hint {
-  display: none;
   position: absolute;
   top: 12px;
   right: 18px;
@@ -437,9 +437,91 @@ header .hint li + li {
   display: block;
   color: #7d8790;
   font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 #judges div.col img {
   float: left;
+}
+#sponsors {
+  padding-bottom: 180px;
+}
+#sponsors ul {
+  margin: 0 2%;
+  padding: 33px 0 13px;
+}
+#sponsors ul [data-id] {
+  position: relative;
+}
+#sponsors ul [data-id="1"] {
+  top: 17px;
+  left: -13px;
+}
+#sponsors ul [data-id="2"] {
+  top: 24px;
+  left: 1px;
+}
+#sponsors ul [data-id="3"] {
+  left: 15px;
+}
+#sponsors ul [data-id="4"] {
+  left: 32px;
+}
+#sponsors ul [data-id="5"] {
+  top: 10px;
+  left: -44px;
+}
+#sponsors ul [data-id="6"] {
+  left: 24px;
+}
+#sponsors ul [data-id="7"] {
+  top: 3px;
+  left: -14px;
+}
+#sponsors ul [data-id="8"] {
+  top: 14px;
+  left: -33px;
+}
+#sponsors ul [data-id="9"] {
+  top: 27px;
+  left: -20px;
+}
+#sponsors ul [data-id="10"] {
+  top: 62px;
+  left: 15px;
+}
+#sponsors ul [data-id="11"] {
+  top: 49px;
+  left: 33px;
+}
+#sponsors ul [data-id="12"] {
+  top: 47px;
+  left: 49px;
+}
+#sponsors ul [data-id="13"] {
+  top: 49px;
+  left: 36px;
+}
+#sponsors ul + ul {
+  border-top: 1px dotted #ececec;
+}
+#sponsors .first li {
+  width: 33.3%;
+}
+#sponsors .second li {
+  width: 50%;
+}
+#sponsors .third li {
+  width: 25%;
+}
+#sponsors li {
+  height: 100px;
+  float: left;
+}
+#sponsors img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
 }
 .playing h1,
 .playing nav,
