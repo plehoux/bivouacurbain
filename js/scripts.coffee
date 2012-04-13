@@ -1,4 +1,4 @@
-Bivouac ?= {}
+window.Bivouac ?= {}
 globals = {}
 globals.$header = $('header')
 globals.$figure = globals.$header.find('figure')
