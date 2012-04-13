@@ -523,6 +523,9 @@ header .hint li + li {
 #sponsors ul + ul {
   border-top: 1px dotted #ececec;
 }
+#sponsors .first {
+  padding-top: 0;
+}
 #sponsors .first li {
   width: 33.3%;
 }
