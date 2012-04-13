@@ -295,8 +295,8 @@ header
   figure
     padding-right: 5.5%
 
-  figcaption p
-    min-height: 16.5em
+  // figcaption p
+  // min-height: 16.5em
 
   div.col
     color: $dark-color
@@ -366,6 +366,7 @@ header
     [data-id="11"] { top: 49px; left: 33px }
     [data-id="12"] { top: 47px; left: 49px }
     [data-id="13"] { top: 49px; left: 36px }
+    img[data-id] { left: 0 }
 
   ul + ul
     border-top: 1px dotted #ececec
@@ -380,6 +381,11 @@ header
   li
     height: 100px
     float: left
+
+  a
+    display: block
+    width: 90%
+    margin: 0 auto
 
   img
     display: block
@@ -411,11 +417,57 @@ header
 @media (max-width: 960px)
   .wrap { width: 730px }
 
-  #intro div.col { padding-right: .9em }
-  #intro p { padding-right: 1.9em }
+  #intro
+    div.col { padding-right: .9em }
+    p { padding-right: 1.9em }
 
   #inscription
     #game { padding-left: 135px }
     #animation { position: relative; left: 25px }
     #painting { float: right; width: 28% }
     #game, #animation, #painting { padding-right: 0 }
+
+  #testimonials
+    blockquote { padding-right: 1em }
+
+  #judges
+    img { max-width: 200px }
+    figure { padding-right: 1% }
+    div.col ul { padding: 1em 0 0 }
+
+  #sponsors
+    .wrap { width: 99% }
+
+@media (max-width: 730px)
+  .wrap { width: 460px }
+  .col-2, .col-3 { width: 100% }
+
+  #inscription
+    #animation { position: static; left: 0 }
+    #painting { float: left; width: 100% }
+    a { width: 90% }
+    .wrap > small { width: 96% }
+
+  #testimonials
+    blockquote + blockquote { padding-top: 3em }
+
+  #judges
+    img
+      display: block
+      max-width: 100%
+      // margin: 0 auto
+
+    figure + figure
+      padding-top: 3em
+
+    div.col
+      span
+        display: block
+        width: 100%
+        text-align: center
+
+      ul { padding-top: .5em }
+
+      li + li
+        padding-left: 4.4em
+        &:after { left: 25px }

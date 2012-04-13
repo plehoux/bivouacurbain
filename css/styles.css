@@ -423,9 +423,6 @@ header .hint li + li {
 #judges figure {
   padding-right: 5.5%;
 }
-#judges figcaption p {
-  min-height: 16.5em;
-}
 #judges div.col {
   color: #1b1d1f;
   padding-top: 5.5em;
@@ -535,6 +532,9 @@ header .hint li + li {
   top: 49px;
   left: 36px;
 }
+#sponsors ul img[data-id] {
+  left: 0;
+}
 #sponsors ul + ul {
   border-top: 1px dotted #ececec;
 }
@@ -553,6 +553,11 @@ header .hint li + li {
 #sponsors li {
   height: 100px;
   float: left;
+}
+#sponsors a {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
 }
 #sponsors img {
   display: block;
@@ -608,5 +613,67 @@ header .hint li + li {
   #inscription #animation,
   #inscription #painting {
     padding-right: 0;
+  }
+  #testimonials blockquote {
+    padding-right: 1em;
+  }
+  #judges img {
+    max-width: 200px;
+  }
+  #judges figure {
+    padding-right: 1%;
+  }
+  #judges div.col ul {
+    padding: 1em 0 0;
+  }
+  #sponsors .wrap {
+    width: 99%;
+  }
+}
+@media (max-width: 730px) {
+  .wrap {
+    width: 460px;
+  }
+  .col-2,
+  .col-3 {
+    width: 100%;
+  }
+  #inscription #animation {
+    position: static;
+    left: 0;
+  }
+  #inscription #painting {
+    float: left;
+    width: 100%;
+  }
+  #inscription a {
+    width: 90%;
+  }
+  #inscription .wrap > small {
+    width: 96%;
+  }
+  #testimonials blockquote + blockquote {
+    padding-top: 3em;
+  }
+  #judges img {
+    display: block;
+    max-width: 100%;
+  }
+  #judges figure + figure {
+    padding-top: 3em;
+  }
+  #judges div.col span {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  #judges div.col ul {
+    padding-top: 0.5em;
+  }
+  #judges div.col li + li {
+    padding-left: 4.4em;
+  }
+  #judges div.col li + li:after {
+    left: 25px;
   }
 }
