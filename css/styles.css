@@ -179,6 +179,7 @@ h3 {
 }
 section {
   padding: 2.75em 0;
+  background: url("../images/fold.png") center top no-repeat;
 }
 ul,
 ol {
@@ -209,7 +210,7 @@ em {
 }
 header {
   overflow: hidden;
-  height: 510px;
+  height: 430px;
   background: url("../images/header-bg.png") center top repeat;
 }
 header a:link,
@@ -232,25 +233,25 @@ header figure {
 header figure .key {
   position: absolute;
   display: block;
-  width: 19px;
-  height: 19px;
-  border-radius: 19px;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
 }
 header figure .key:nth-child(2) {
-  bottom: 178px;
-  right: 140px;
+  bottom: 157px;
+  right: 122px;
 }
 header figure .key:nth-child(3) {
-  bottom: 161px;
-  right: 123px;
+  bottom: 142px;
+  right: 107px;
 }
 header figure .key:nth-child(4) {
-  bottom: 145px;
-  right: 140px;
+  bottom: 128px;
+  right: 122px;
 }
 header figure .key:nth-child(5) {
-  bottom: 161px;
-  right: 156px;
+  bottom: 142px;
+  right: 136px;
 }
 header h1 {
   position: absolute;
@@ -277,15 +278,16 @@ header nav li + li {
 }
 header .hint {
   position: absolute;
-  top: 12px;
+  top: 5px;
   right: 18px;
+  opacity: 0.75;
 }
 header .hint li {
   display: block;
   float: left;
   width: 24px;
   height: 24px;
-  color: #fff;
+  color: #ff8a8a;
   text-align: center;
   border-radius: 24px;
 }
@@ -531,7 +533,7 @@ header .hint li + li {
 }
 .ship {
   -webkit-transition: -webkit-transform 0.4s ease-out;
-  -webkit-transform: rotate(-90deg) scale(0.3) translate3d(-450px, 0, 0);
+  -webkit-transform: rotate(-90deg) scale(0.3) translate3d(-355px, 0, 0);
 }
 .ship img {
   -webkit-transform: translate3d(0, 0, 0);
