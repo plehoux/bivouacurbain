@@ -627,19 +627,25 @@ header .hint li + li {
     padding-right: 1.9em;
   }
   #inscription #game {
-    padding-left: 135px;
+    padding-left: 100px;
+    background-size: 90px;
+    width: 35%;
   }
   #inscription #animation {
-    position: relative;
-    left: 25px;
+    padding-left: 73px;
+    background-size: 60px;
+    width: 31%;
   }
   #inscription #painting {
+    padding-left: 65px;
     float: right;
-    width: 28%;
+    width: 33%;
+    background-size: 48px;
   }
   #inscription #game,
   #inscription #animation,
   #inscription #painting {
+    background-position: 0 5px;
     padding-right: 0;
   }
   #testimonials blockquote {
@@ -659,6 +665,9 @@ header .hint li + li {
   }
 }
 @media (max-width: 730px) {
+  html {
+    font-size: 9px;
+  }
   .wrap {
     width: 460px;
   }
@@ -669,23 +678,32 @@ header .hint li + li {
   #inscription #game,
   #inscription #animation,
   #inscription #painting {
-    padding-left: 145px;
+    padding-left: 105px;
+    width: 100%;
   }
   #inscription #animation {
     position: static;
     left: 0;
-    background-position: 17px 0;
+    background-position: 14px 10px;
   }
   #inscription #painting {
     float: left;
-    width: 100%;
-    background-position: 24px 0;
+    background-position: 20px 10px;
   }
   #inscription a {
-    width: 90%;
+    width: 94.5%;
   }
   #inscription .wrap > small {
     width: 96%;
+  }
+  #testimonials blockquote img {
+    width: 42px;
+  }
+  #testimonials blockquote div {
+    height: 96px;
+  }
+  #testimonials blockquote p {
+    padding-top: 0.5em;
   }
   #testimonials blockquote + blockquote {
     padding-top: 3em;
@@ -698,18 +716,34 @@ header .hint li + li {
   }
   #judges img {
     display: block;
-    max-width: 100%;
+    max-width: 150px;
     margin: 0 auto;
+  }
+  #judges div.col {
+    float: none;
+    clear: both;
   }
   #judges div.col span {
     display: block;
     width: 100%;
     text-align: center;
   }
-  #judges div.col ul {
+  #judges div.col h3 {
     padding-top: 0.5em;
+    text-align: left;
+  }
+  #judges div.col ul {
+    width: 365px;
+    margin: 0 auto;
+    padding-top: 0.5em;
+    display: block;
+    float: none;
+  }
+  #judges div.col li img {
+    width: 42px;
   }
   #judges div.col li + li {
+    float: right;
     padding-left: 4.4em;
   }
   #judges div.col li + li:after {
@@ -723,5 +757,50 @@ header .hint li + li {
   }
   #sponsors .third li {
     width: 50%;
+  }
+}
+@media (max-width: 460px) {
+  .wrap {
+    width: 90%;
+  }
+  .col {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  #inscription a {
+    width: 100%;
+    font-size: 18px;
+    font-size: 1.8rem;
+  }
+  #inscription .wrap > small {
+    padding: 1em 1em 0;
+  }
+  #inscription li {
+    padding-left: 105px !important;
+  }
+  #judges div.col {
+    width: 100%;
+    float: none;
+  }
+  #judges div.col span {
+    font-size: 22px;
+    font-size: 2.2rem;
+    text-align: left;
+  }
+  #judges div.col h3 {
+    padding-left: 0.3em;
+  }
+  #judges div.col ul {
+    width: 100%;
+  }
+  #judges div.col li img {
+    width: 42px;
+  }
+  #judges div.col li + li {
+    float: right;
+    padding-left: 0;
+  }
+  #judges div.col li + li:after {
+    display: none;
   }
 }

@@ -454,10 +454,25 @@ header
     p { padding-right: 1.9em }
 
   #inscription
-    #game { padding-left: 135px }
-    #animation { position: relative; left: 25px }
-    #painting { float: right; width: 28% }
-    #game, #animation, #painting { padding-right: 0 }
+    #game
+      padding-left: 100px
+      background-size: 90px;
+      width: 35%
+
+    #animation
+      padding-left: 73px
+      background-size: 60px;
+      width: 31%
+
+    #painting
+      padding-left: 65px
+      float: right
+      width: 33%
+      background-size: 48px;
+
+    #game, #animation, #painting
+      background-position: 0 5px
+      padding-right: 0
 
   #testimonials
     blockquote { padding-right: 1em }
@@ -471,49 +486,69 @@ header
     .wrap { width: 99% }
 
 @media (max-width: 730px)
+  html { font-size: 9px }
   .wrap { width: 460px }
   .col-2, .col-3 { width: 100% }
 
   #inscription
-    #game, #animation, #painting { padding-left: 145px }
+    #game, #animation, #painting
+      padding-left: 105px
+      width: 100%
 
     #animation
       position: static
       left: 0
-      background-position: 17px 0
+      background-position: 14px 10px
 
     #painting
       float: left
-      width: 100%
-      background-position: 24px 0
+      background-position: 20px 10px
 
-    a { width: 90% }
+    a { width: 94.5% }
     .wrap > small { width: 96% }
 
   #testimonials
+    blockquote
+      img { width: 42px }
+      div { height: 96px }
+      p { padding-top: 0.5em }
+
     blockquote + blockquote { padding-top: 3em }
 
   #judges
-    h3
-      text-align: center
+    h3 { text-align: center }
 
     figure + figure
       padding-top: 3em
 
     img
       display: block
-      max-width: 100%
+      max-width: 150px
       margin: 0 auto
 
     div.col
+      float: none
+      clear: both
+
       span
         display: block
         width: 100%
         text-align: center
 
-      ul { padding-top: .5em }
+      h3
+        padding-top: .5em
+        text-align: left
 
+      ul
+        width: 365px
+        margin: 0 auto
+        padding-top: .5em
+        display: block
+        float: none
+
+      li img { width: 42px }
       li + li
+        float: right
         padding-left: 4.4em
         &:after { left: 25px }
 
@@ -521,3 +556,42 @@ header
     .first li { width: 50% }
     .first li:nth-child(3) { width: 100% }
     .third li { width: 50% }
+
+@media (max-width: 460px)
+  .wrap { width: 90% }
+
+  .col
+    padding-left: 0 !important
+    padding-right: 0 !important
+
+  #inscription
+    a
+      width: 100%
+      font-size: 18px
+      font-size: 1.8rem
+
+    .wrap > small
+      padding: 1em 1em 0
+
+    li { padding-left: 105px !important }
+
+  #judges
+    div.col
+      width: 100%
+      float: none
+
+      span
+        font-size: 22px
+        font-size: 2.2rem
+        text-align: left
+
+      h3 { padding-left: .3em }
+
+      ul { width: 100% }
+      li img { width: 42px }
+
+      li + li
+        float: right
+        padding-left: 0
+        &:after { display: none }
+      
