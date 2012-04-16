@@ -501,55 +501,42 @@ header .hint li + li {
 }
 #sponsors ul [data-id="1"] {
   top: 17px;
-  left: -13px;
 }
 #sponsors ul [data-id="2"] {
   top: 24px;
-  left: 1px;
 }
 #sponsors ul [data-id="3"] {
-  left: 15px;
+  top: 0;
 }
 #sponsors ul [data-id="4"] {
-  left: 32px;
+  top: 0;
 }
 #sponsors ul [data-id="5"] {
   top: 10px;
-  left: -44px;
 }
 #sponsors ul [data-id="6"] {
-  left: 24px;
+  top: 0;
 }
 #sponsors ul [data-id="7"] {
   top: 3px;
-  left: -14px;
 }
 #sponsors ul [data-id="8"] {
   top: 14px;
-  left: -33px;
 }
 #sponsors ul [data-id="9"] {
   top: 27px;
-  left: -20px;
 }
 #sponsors ul [data-id="10"] {
   top: 62px;
-  left: 15px;
 }
 #sponsors ul [data-id="11"] {
   top: 49px;
-  left: 33px;
 }
 #sponsors ul [data-id="12"] {
   top: 47px;
-  left: 49px;
 }
 #sponsors ul [data-id="13"] {
   top: 49px;
-  left: 36px;
-}
-#sponsors ul img[data-id] {
-  left: 0;
 }
 #sponsors ul + ul {
   border-top: 1px dotted #ececec;
@@ -722,5 +709,14 @@ header .hint li + li {
   }
   #judges div.col li + li:after {
     left: 25px;
+  }
+  #sponsors .first li {
+    width: 50%;
+  }
+  #sponsors .first li:nth-child(3) {
+    width: 100%;
+  }
+  #sponsors .third li {
+    width: 50%;
   }
 }
