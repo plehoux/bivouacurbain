@@ -335,6 +335,7 @@ header .hint li + li {
 }
 #inscription ol {
   padding: 0 2%;
+  -webkit-hyphens: none;
 }
 #inscription li {
   float: left;
