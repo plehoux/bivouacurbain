@@ -666,13 +666,20 @@ header .hint li + li {
   .col-3 {
     width: 100%;
   }
+  #inscription #game,
+  #inscription #animation,
+  #inscription #painting {
+    padding-left: 145px;
+  }
   #inscription #animation {
     position: static;
     left: 0;
+    background-position: 17px 0;
   }
   #inscription #painting {
     float: left;
     width: 100%;
+    background-position: 24px 0;
   }
   #inscription a {
     width: 90%;
