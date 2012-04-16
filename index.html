@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+    <script>
+      // http://www.quirksmode.org/js/cookies.html#script
+      function writeCookie(a,b,c){if(c){var d=new Date;d.setTime(d.getTime()+c*24*60*60*1e3);var e="; expires="+d.toGMTString()}else var e="";document.cookie=a+"="+b+e+"; path=/"}function readCookie(a){var b=a+"=",c=document.cookie.split(";");for(var d=0;d<c.length;d++){var e=c[d];while(e.charAt(0)==" ")e=e.substring(1,e.length);if(e.indexOf(b)==0)return e.substring(b.length,e.length)}}
+
+      if (location.search.indexOf('locale=fr') > -1) {
+        writeCookie('lang', 'fr', 500)
+        location.href = '/'
+      } else if (readCookie('lang') == 'en') {
+        location.href = '/en'
+      }
+    </script>
     <meta charset="utf-8">
     <title>Bivouac Boulevard Scion</title>
     <meta property="og:title" content="Bivouac Boulevard Scion">
