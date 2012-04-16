@@ -143,7 +143,8 @@ class Bivouac.Invaders
         bottom = enemy.offset().top + enemy.height()
         if currentPos.top <= bounds.bottom && currentPos.left >= bounds.left && currentPos.left <= bounds.right
           this.removeBullet()
-          enemy.remove()
+          # enemy.remove()
+          enemy.addClass 'dead'
           @enemies.splice i, 1
           return
 

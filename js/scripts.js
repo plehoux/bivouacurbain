@@ -184,7 +184,7 @@
           bottom = enemy.offset().top + enemy.height();
           if (currentPos.top <= bounds.bottom && currentPos.left >= bounds.left && currentPos.left <= bounds.right) {
             this.removeBullet();
-            enemy.remove();
+            enemy.addClass('dead');
             this.enemies.splice(i, 1);
             return;
           }

@@ -598,9 +598,8 @@ header .hint li + li {
   display: block;
   width: 60px;
   height: 60px;
-  position: absolute;
-  top: 0;
-  left: 0;
+  float: left;
+  margin: 5px 3px;
   background: url("../images/enemies.spr.png") left top no-repeat;
 }
 .enemy.paolo {
@@ -611,6 +610,9 @@ header .hint li + li {
 }
 .enemy.zach {
   background-position: -120px 0;
+}
+.enemy.dead {
+  background: none;
 }
 @media (max-width: 960px) {
   .wrap {

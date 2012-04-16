@@ -422,13 +422,14 @@ header
 .enemy
   display: block
   width: 60px; height: 60px
-  position: absolute
-  top: 0; left: 0
+  float: left
+  margin: 5px 3px
   background: url(../images/enemies.spr.png) left top no-repeat
 
   &.paolo { background-position: 0 0 }
   &.ramiro { background-position: -60px 0 }
   &.zach { background-position: -120px 0 }
+  &.dead { background: none }
 
 // Media Queries -------------------------------------------------------------
 @media (max-width: 960px)
