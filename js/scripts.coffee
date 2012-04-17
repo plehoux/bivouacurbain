@@ -249,7 +249,7 @@ class Bivouac.Invaders
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
           js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/fr_CA/all.js#xfbml=1&appId=259990290693706";
+          js.src = "//connect.facebook.net/#{{fr: 'fr_CA', en: 'en_US'}[$('html').attr('lang')]}/all.js#xfbml=1&appId=259990290693706";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
       </div>
