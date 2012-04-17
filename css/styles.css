@@ -940,6 +940,18 @@ header .hint li + li {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+  section {
+    padding-top: 1.75em;
+  }
+  header {
+    background: #e4032e -webkit-linear-gradient(top, rgba(228,3,46,0.20), rgba(50,64,79,0.20));
+  }
+  header .height-hack {
+    padding: 70% 0 0;
+  }
+  header h1 {
+    top: 25%;
+  }
   #intro div.col {
     display: block;
     font-size: 18px;
