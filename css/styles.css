@@ -117,8 +117,9 @@ a:visited {
   color: #e4032e;
 }
 a:focus,
-a:link:hover {
+a:hover {
   color: #e4032e;
+  text-decoration: underline;
 }
 p,
 ul,
@@ -143,6 +144,14 @@ ol:after,
   content: '\A';
   white-space: pre;
 }
+::selection {
+  color: #fff;
+  background-color: #e4032e;
+}
+::moz-selection {
+  color: #fff;
+  background-color: #e4032e;
+}
 hgroup > :first-child {
   margin-bottom: 0.3em;
 }
@@ -162,7 +171,7 @@ h1 {
   margin: 0;
 }
 h2 {
-  color: #acafb3;
+  color: #a8abb3;
   font-size: 16px;
   font-size: 1.6rem;
   font-weight: 300;
@@ -295,11 +304,21 @@ header nav li:first-child {
 header nav li + li {
   margin: 0 0 0 1em;
 }
+header nav li a {
+  padding-bottom: 1em;
+  -webkit-transition: padding 0.1s;
+}
+header nav li a:hover,
+header nav li a:focus {
+  border-bottom: 3px solid #fff;
+  padding-bottom: 0.875em;
+  text-decoration: none;
+}
 header .hint {
   position: absolute;
   top: 5px;
   right: 18px;
-  opacity: 0.75;
+  opacity: 0.9;
 }
 header .hint li {
   display: block;
@@ -307,6 +326,8 @@ header .hint li {
   width: 24px;
   height: 24px;
   color: #ff8a8a;
+  font-size: 12px;
+  font-size: 1.2rem;
   text-align: center;
   border-radius: 24px;
 }
@@ -324,23 +345,24 @@ header .hint li + li {
   display: none;
 }
 #intro div.col {
-  font-size: 30px;
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.1;
-  padding-right: 1.5em;
-}
-#intro p {
-  padding-top: 0.7em;
-  padding-right: 2em;
-}
-#intro small {
   display: block;
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 1.3;
-  padding: 1em 0 0;
   font-weight: 400;
+}
+#intro div.col strong {
+  display: block;
+  padding: 0 1.5em 0.3em 0;
+  font-size: 30px;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+#intro p {
+  color: #2f353b;
+  padding-top: 0.7em;
+  padding-right: 2em;
 }
 #inscription ol {
   padding: 0 2%;
@@ -369,11 +391,12 @@ header .hint li + li {
   color: #5a5f65;
   display: block;
   font-weight: 400;
+  margin-bottom: 0.25em;
 }
 #inscription li span {
+  color: #a8abb3;
   font-size: 13px;
   font-size: 1.3rem;
-  color: #7a7a7a;
   font-weight: 400;
 }
 #inscription #game {
@@ -404,11 +427,19 @@ header .hint li + li {
   background-color: #e4032e;
   border-radius: 65px;
   -webkit-box-shadow: 0 9px 7px rgba(27,42,78,0.05);
+  -webkit-transition: all 0.1s ease;
+}
+#inscription a:hover,
+#inscription a:focus {
+  width: 58%;
+  background-color: #ec0f39;
+  text-decoration: none;
 }
 #inscription .wrap > small {
   display: block;
   width: 55%;
   margin: 0 auto;
+  color: #a8abb3;
   font-size: 12px;
   font-size: 1.2rem;
   text-align: center;
@@ -445,6 +476,12 @@ header .hint li + li {
 }
 #judges figure {
   padding-right: 5.5%;
+  text-align: center;
+}
+#judges figure p,
+#judges figure a {
+  display: block;
+  text-align: left;
 }
 #judges div.col {
   color: #1b1d1f;
@@ -484,17 +521,22 @@ header .hint li + li {
   float: left;
   font-size: 16px;
   font-size: 1.6rem;
+  line-height: 1.25;
   padding: 0.85em 0 0 1.1em;
 }
 #judges div.col small {
   display: block;
-  color: #7d8790;
+  color: #5d6770;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
 }
 #judges div.col img {
   float: left;
+}
+#judges div.col p {
+  width: 100%;
+  text-align: center;
 }
 #sponsors {
   padding-bottom: 180px;
@@ -546,7 +588,7 @@ header .hint li + li {
   top: 49px;
 }
 #sponsors ul + ul {
-  border-top: 1px dotted #ececec;
+  border-top: 1px dashed #ececec;
 }
 #sponsors .first {
   padding-top: 0;
@@ -693,6 +735,9 @@ header .hint li + li {
   html {
     font-size: 9px;
   }
+  body {
+    line-height: 1.5;
+  }
   .wrap {
     min-width: 460px;
   }
@@ -729,6 +774,9 @@ header .hint li + li {
   }
   #testimonials blockquote p {
     padding-top: 0.5em;
+  }
+  #testimonials blockquote:after {
+    left: 18px;
   }
   #testimonials blockquote + blockquote {
     padding-top: 3em;
@@ -793,6 +841,21 @@ header .hint li + li {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+  #intro div.col {
+    display: block;
+    font-size: 18px;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+  #intro div.col strong {
+    display: block;
+    padding: 0 1.5em 0.5em 0;
+    font-size: 24px;
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
   #inscription a {
     font-size: 18px;
     font-size: 1.8rem;
@@ -802,6 +865,9 @@ header .hint li + li {
   }
   #inscription li {
     padding-left: 105px !important;
+  }
+  #testimonials blockquote:after {
+    left: 5px;
   }
   #judges div.col {
     width: 100%;
