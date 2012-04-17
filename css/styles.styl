@@ -70,7 +70,7 @@ h3
 // Layout --------------------------------------------------------------------
 .wrap
   position: relative
-  width: 934px
+  max-width: 1105px
   margin: 0 auto
 
 section
@@ -110,36 +110,43 @@ li
 
 // Header --------------------------------------------------------------------
 header
+  position: relative
   overflow: hidden
   height: 430px
-  background: url(../images/header-bg.png) center top repeat
+  padding-top: 40%
+  background: url(../images/header-bg.png) center bottom repeat
   
   a:link, a:visited { color: #fff }
   a:focus, a:link:hover { color: #fff }
 
   .wrap
+    position: absolute
+    bottom: 0; left: 50%
     height: 100%
+    width: 1105px
+    margin-left: -552px
 
   figure
     position: absolute
-    left: 0; bottom: -47px
+    left: 0; bottom: -61px
     margin: 0
 
     .key
       position: absolute
       display: block
-      width: 15px; height: 15px
-      border-radius: 15px
+      width: 19px; height: 19px
+      border-radius: 19px
+      background-color: pink
 
-      &:nth-child(2) { bottom: 157px; right: 122px }
-      &:nth-child(3) { bottom: 142px; right: 107px }
-      &:nth-child(4) { bottom: 128px; right: 122px }
-      &:nth-child(5) { bottom: 142px; right: 136px }
+      &:nth-child(2) { bottom: 187px; right: 146px }
+      &:nth-child(3) { bottom: 169px; right: 129px }
+      &:nth-child(4) { bottom: 152px; right: 147px }
+      &:nth-child(5) { bottom: 169px; right: 164px }
 
   h1
     position: absolute
-    bottom: 78px; right: 18px
-    width: 425px; height: 139px
+    bottom: 137px; right: 18px
+    width: 530px; height: 172px
     background: url(../images/bivouac-boulevard-scion.png) left top no-repeat
     text-indent: 100%
     white-space: nowrap  
@@ -147,7 +154,7 @@ header
 
   nav
     position: absolute
-    bottom: 1.5em; right: 18px
+    bottom: 1em; right: 18px
     text-transform: uppercase
 
     li:first-child { font-weight: 700 }
@@ -311,9 +318,6 @@ header
   figure
     padding-right: 5.5%
 
-  // figcaption p
-  // min-height: 16.5em
-
   div.col
     color: $dark-color
     padding-top: 5.5em
@@ -446,6 +450,11 @@ header
   &.dead { background: none }
 
 // Media Queries -------------------------------------------------------------
+@media (min-width: 1317px)
+  header
+    height: 525px
+    padding: 0
+
 @media (max-width: 960px)
   .wrap { width: 730px }
 

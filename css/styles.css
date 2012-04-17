@@ -179,7 +179,7 @@ h3 {
 }
 .wrap {
   position: relative;
-  width: 934px;
+  max-width: 1105px;
   margin: 0 auto;
 }
 section {
@@ -221,9 +221,11 @@ li {
   width: 33.3%;
 }
 header {
+  position: relative;
   overflow: hidden;
   height: 430px;
-  background: url("../images/header-bg.png") center top repeat;
+  padding-top: 40%;
+  background: url("../images/header-bg.png") center bottom repeat;
 }
 header a:link,
 header a:visited {
@@ -234,43 +236,49 @@ header a:link:hover {
   color: #fff;
 }
 header .wrap {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
   height: 100%;
+  width: 1105px;
+  margin-left: -552px;
 }
 header figure {
   position: absolute;
   left: 0;
-  bottom: -47px;
+  bottom: -61px;
   margin: 0;
 }
 header figure .key {
   position: absolute;
   display: block;
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
+  width: 19px;
+  height: 19px;
+  border-radius: 19px;
+  background-color: #ffc0cb;
 }
 header figure .key:nth-child(2) {
-  bottom: 157px;
-  right: 122px;
+  bottom: 187px;
+  right: 146px;
 }
 header figure .key:nth-child(3) {
-  bottom: 142px;
-  right: 107px;
+  bottom: 169px;
+  right: 129px;
 }
 header figure .key:nth-child(4) {
-  bottom: 128px;
-  right: 122px;
+  bottom: 152px;
+  right: 147px;
 }
 header figure .key:nth-child(5) {
-  bottom: 142px;
-  right: 136px;
+  bottom: 169px;
+  right: 164px;
 }
 header h1 {
   position: absolute;
-  bottom: 78px;
+  bottom: 137px;
   right: 18px;
-  width: 425px;
-  height: 139px;
+  width: 530px;
+  height: 172px;
   background: url("../images/bivouac-boulevard-scion.png") left top no-repeat;
   text-indent: 100%;
   white-space: nowrap;
@@ -278,7 +286,7 @@ header h1 {
 }
 header nav {
   position: absolute;
-  bottom: 1.5em;
+  bottom: 1em;
   right: 18px;
   text-transform: uppercase;
 }
@@ -615,6 +623,12 @@ header .hint li + li {
 }
 .enemy.dead {
   background: none;
+}
+@media (min-width: 1317px) {
+  header {
+    height: 525px;
+    padding: 0;
+  }
 }
 @media (max-width: 960px) {
   .wrap {
