@@ -93,6 +93,7 @@
       this.gameTimer = setInterval(function() {
         return _this.render();
       }, 16);
+      this.endGame();
     }
 
     Invaders.prototype.init = function() {
