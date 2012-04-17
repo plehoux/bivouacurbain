@@ -418,7 +418,7 @@ header
 
 .ship
   -webkit-transition: -webkit-transform .4s ease-out
-  -webkit-transform: rotate(-90deg) scale(.3) translate3d(-455px,0,0)
+  -webkit-transform: rotate(-90deg) scale(.3) translate3d(-560px,0,0)
 
   img { -webkit-transform: translate3d(0,0,0) }
 
@@ -443,10 +443,24 @@ header
   margin: 5px 3px
   background: url(../images/enemies.spr.png) left top no-repeat
 
-  &.paolo { background-position: 0 0 }
-  &.ramiro { background-position: -60px 0 }
-  &.zach { background-position: -120px 0 }
-  &.dead { background: none }
+  &.paolo
+    background-position: 0 0
+    &.dead { background-position: 0 -60px }
+
+  &.ramiro
+    background-position: -60px 0
+    &.dead { background-position: -60px -60px }
+
+  &.zach
+    background-position: -120px 0
+    &.dead { background-position: -120px -60px }
+
+  &.dead
+    position: relative
+    top: 75px
+    opacity: 0
+
+    -webkit-transition: top .4s ease-in-out, opacity .4s ease-out
 
 // Media Queries -------------------------------------------------------------
 @media (min-width: 1317px)

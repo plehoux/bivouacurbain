@@ -52,6 +52,7 @@ class Bivouac.Invaders
     @offset = 0
     @speed = 0
     @isShooting = false
+    @startTime = new Date()
     @isGoing =
       left: false
       right: false
@@ -59,6 +60,7 @@ class Bivouac.Invaders
     this.init()
     this.initKeyboard()
     this.addEnemies()
+    # this.addTimer()
 
     setInterval =>
       this.render()
@@ -96,6 +98,7 @@ class Bivouac.Invaders
     this.moveShip()
     this.moveBullets()
     this.shootBullet() if @isShooting && @bullets.length < 1
+    # console.log new Date() - @startTime
 
   moveShip: ->
     shipPosition = @ship.offset()
@@ -163,9 +166,6 @@ class Bivouac.Invaders
     for i in [0..29]
       enemy = $('<span class="enemy"></span>')
       enemy.addClass ['paolo', 'ramiro', 'zach'][Math.floor(i/10 % 10)]
-      enemy.css
-        left: 66 * (i % 10)
-        top: 70 * (Math.ceil(i/10) - 1) + 5
       enemies.append enemy
       @enemies.push enemy
 

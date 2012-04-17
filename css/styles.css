@@ -582,7 +582,7 @@ header .hint li + li {
 }
 .ship {
   -webkit-transition: -webkit-transform 0.4s ease-out;
-  -webkit-transform: rotate(-90deg) scale(0.3) translate3d(-455px, 0, 0);
+  -webkit-transform: rotate(-90deg) scale(0.3) translate3d(-560px, 0, 0);
 }
 .ship img {
   -webkit-transform: translate3d(0, 0, 0);
@@ -614,14 +614,26 @@ header .hint li + li {
 .enemy.paolo {
   background-position: 0 0;
 }
+.enemy.paolo.dead {
+  background-position: 0 -60px;
+}
 .enemy.ramiro {
   background-position: -60px 0;
+}
+.enemy.ramiro.dead {
+  background-position: -60px -60px;
 }
 .enemy.zach {
   background-position: -120px 0;
 }
+.enemy.zach.dead {
+  background-position: -120px -60px;
+}
 .enemy.dead {
-  background: none;
+  position: relative;
+  top: 75px;
+  opacity: 0;
+  -webkit-transition: top 0.4s ease-in-out, opacity 0.4s ease-out;
 }
 @media (min-width: 1317px) {
   header {

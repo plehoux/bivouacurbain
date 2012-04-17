@@ -75,6 +75,7 @@
       this.offset = 0;
       this.speed = 0;
       this.isShooting = false;
+      this.startTime = new Date();
       this.isGoing = {
         left: false,
         right: false
@@ -208,10 +209,6 @@
       for (i = 0; i <= 29; i++) {
         enemy = $('<span class="enemy"></span>');
         enemy.addClass(['paolo', 'ramiro', 'zach'][Math.floor(i / 10 % 10)]);
-        enemy.css({
-          left: 66 * (i % 10),
-          top: 70 * (Math.ceil(i / 10) - 1) + 5
-        });
         enemies.append(enemy);
         this.enemies.push(enemy);
       }
