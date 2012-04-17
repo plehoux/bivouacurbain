@@ -143,7 +143,6 @@ class Bivouac.Invaders
         bottom = enemy.offset().top + enemy.height()
         if currentPos.top <= bounds.bottom && currentPos.left >= bounds.left && currentPos.left <= bounds.right
           this.removeBullet()
-          # enemy.remove()
           enemy.addClass 'dead'
           @enemies.splice i, 1
           return
@@ -161,9 +160,9 @@ class Bivouac.Invaders
     @enemies = []
     enemies = $('<div class="enemies"></div>')
 
-    for i in [1..20]
+    for i in [0..29]
       enemy = $('<span class="enemy"></span>')
-      enemy.addClass ['paolo', 'ramiro', 'zach'].random()
+      enemy.addClass ['paolo', 'ramiro', 'zach'][Math.floor(i/10 % 10)]
       enemy.css
         left: 66 * (i % 10)
         top: 70 * (Math.ceil(i/10) - 1) + 5

@@ -205,9 +205,9 @@
       var enemies, enemy, i;
       this.enemies = [];
       enemies = $('<div class="enemies"></div>');
-      for (i = 1; i <= 20; i++) {
+      for (i = 0; i <= 29; i++) {
         enemy = $('<span class="enemy"></span>');
-        enemy.addClass(['paolo', 'ramiro', 'zach'].random());
+        enemy.addClass(['paolo', 'ramiro', 'zach'][Math.floor(i / 10 % 10)]);
         enemy.css({
           left: 66 * (i % 10),
           top: 70 * (Math.ceil(i / 10) - 1) + 5
