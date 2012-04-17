@@ -237,6 +237,12 @@ header {
   background: #e4032e url("../images/header-bg.png") center bottom repeat;
   background: -webkit-linear-gradient(top, rgba(228,3,46,0.20), rgba(50,64,79,0.20)), url("../images/header-bg.png") center bottom repeat, #e4032e;
 }
+header ::selection {
+  background-color: #000;
+}
+header ::moz-selection {
+  background-color: #000;
+}
 header a:link,
 header a:visited {
   color: #fff;
