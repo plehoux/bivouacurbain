@@ -455,7 +455,7 @@ header
     padding: 0
 
 @media (max-width: 960px)
-  .wrap { width: 730px }
+  .wrap { min-width: 730px }
 
   #intro
     div.col { padding-right: .9em }
@@ -495,7 +495,7 @@ header
 
 @media (max-width: 730px)
   html { font-size: 9px }
-  .wrap { width: 460px }
+  .wrap { min-width: 460px }
   .col-2, .col-3 { width: 100% }
 
   #inscription
@@ -566,7 +566,9 @@ header
     .third li { width: 50% }
 
 @media (max-width: 460px)
-  .wrap { width: 90% }
+  .wrap
+    width: 90%
+    min-width: inherit
 
   .col
     padding-left: 0 !important
@@ -574,7 +576,6 @@ header
 
   #inscription
     a
-      width: 100%
       font-size: 18px
       font-size: 1.8rem
 
@@ -602,4 +603,4 @@ header
         float: right
         padding-left: 0
         &:after { display: none }
-      
+

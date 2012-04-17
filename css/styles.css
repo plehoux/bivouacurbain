@@ -631,7 +631,7 @@ header .hint li + li {
 }
 @media (max-width: 960px) {
   .wrap {
-    width: 730px;
+    min-width: 730px;
   }
   #intro div.col {
     padding-right: 0.9em;
@@ -682,7 +682,7 @@ header .hint li + li {
     font-size: 9px;
   }
   .wrap {
-    width: 460px;
+    min-width: 460px;
   }
   .col-2,
   .col-3 {
@@ -775,13 +775,13 @@ header .hint li + li {
 @media (max-width: 460px) {
   .wrap {
     width: 90%;
+    min-width: inherit;
   }
   .col {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
   #inscription a {
-    width: 100%;
     font-size: 18px;
     font-size: 1.8rem;
   }
