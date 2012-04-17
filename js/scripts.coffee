@@ -73,8 +73,6 @@ class Bivouac.Invaders
       this.render()
     , 16
 
-    this.endGame()
-
   # Initialization
   init: ->
     $('.key').remove()
