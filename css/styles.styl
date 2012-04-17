@@ -122,8 +122,6 @@ li
 header
   position: relative
   overflow: hidden
-  height: 430px
-  padding-top: 40%
   background: #e4032e url(../images/header-bg.png) center bottom repeat
   background: -webkit-linear-gradient(top, rgba(228,3,46,0.2), rgba(50,64,79,0.2)), url(../images/header-bg.png) center bottom repeat, #e4032e
 
@@ -134,16 +132,23 @@ header
   a:focus, a:link:hover { color: #fff }
 
   .wrap
-    position: absolute
-    bottom: 0; left: 50%
-    height: 100%
-    width: 1105px
-    margin-left: -552px
+    position: relative
+
+  .height-hack { padding: 47% 0 0 }
 
   figure
+    // float: left
     position: absolute
     left: 0; bottom: -61px
     margin: 0
+    width: 42.171945701%
+    max-width: 466px
+    // position: relative
+    // top: 61px
+
+    img
+      display: block
+      width: 100%
 
     .key
       position: absolute
@@ -158,12 +163,11 @@ header
 
   h1
     position: absolute
-    bottom: 137px; right: 18px
-    width: 530px; height: 172px
-    background: url(../images/bivouac-boulevard-scion.png) left top no-repeat
-    text-indent: 100%
-    white-space: nowrap
-    overflow: hidden
+    bottom: 132px; right: 18px
+    width: 50%
+    max-width: 530px
+
+    img { width: 100% }
 
   nav
     position: absolute
@@ -472,6 +476,9 @@ header
 
 // Invaders ------------------------------------------------------------------
 .playing
+  height: 525px
+  padding: 0
+
   h1, nav, .hint
     opacity: 0
     -webkit-transition: opacity .4s ease-out
@@ -493,6 +500,7 @@ header
     opacity: 0
 
 .ship
+  width: 466px
   -webkit-transition: -webkit-transform .4s ease-out
   -webkit-transform: rotate(-90deg) scale(.3) translate3d(-560px,0,0)
 
@@ -577,11 +585,6 @@ header
     opacity: 0
 
 // Media Queries -------------------------------------------------------------
-@media (min-width: 1317px)
-  header
-    height: 525px
-    padding: 0
-
 @media (max-width: 960px)
   .wrap { min-width: 730px }
 
