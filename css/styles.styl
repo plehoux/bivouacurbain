@@ -124,7 +124,11 @@ header
   overflow: hidden
   height: 430px
   padding-top: 40%
-  background: url(../images/header-bg.png) center bottom repeat
+  background: #e4032e url(../images/header-bg.png) center bottom repeat
+  background:
+  -webkit-linear-gradient(top, rgba(228,3,46,0.2), rgba(50,64,79,0.2)),
+  url(../images/header-bg.png) center bottom repeat,
+  #e4032e
   
   a:link, a:visited { color: #fff }
   a:focus, a:link:hover { color: #fff }
@@ -222,7 +226,6 @@ header
       line-height: 1.1
 
   p
-    color: #2f353b
     padding-top: .7em
     padding-right: 2em
 

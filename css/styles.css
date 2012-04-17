@@ -234,7 +234,8 @@ header {
   overflow: hidden;
   height: 430px;
   padding-top: 40%;
-  background: url("../images/header-bg.png") center bottom repeat;
+  background: #e4032e url("../images/header-bg.png") center bottom repeat;
+  background: -webkit-linear-gradient(top, rgba(228,3,46,0.20), rgba(50,64,79,0.20)), url("../images/header-bg.png") center bottom repeat, #e4032e;
 }
 header a:link,
 header a:visited {
@@ -360,7 +361,6 @@ header .hint li + li {
   line-height: 1.1;
 }
 #intro p {
-  color: #2f353b;
   padding-top: 0.7em;
   padding-right: 2em;
 }
