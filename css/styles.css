@@ -648,6 +648,12 @@ header .hint li + li {
   height: 525px;
   padding: 0;
 }
+.playing .height-hack {
+  display: none;
+}
+.playing .wrap {
+  height: 100%;
+}
 .playing h1,
 .playing nav,
 .playing .hint {
