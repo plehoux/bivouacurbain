@@ -134,6 +134,7 @@ figure {
 .wrap:after,
 ol:after,
 #testimonials blockquote div:after,
+#judges div.col:after,
 #sponsors ul:after {
   display: block;
   content: '';
@@ -492,20 +493,28 @@ header .hint li + li {
 #judges div.col {
   color: #1b1d1f;
   padding-top: 5.5em;
+  float: none;
+  clear: left;
+  margin: 0 auto;
+  text-align: center;
 }
 #judges div.col span {
   font-size: 24px;
   font-size: 2.4rem;
   font-weight: 700;
-  float: left;
   padding: 0.5em 0 0;
 }
 #judges div.col ul,
 #judges div.col li {
-  float: left;
+  display: inline-block;
+  text-align: left;
 }
 #judges div.col ul {
   padding: 0 0 0 3.75em;
+}
+#judges div.col li {
+  position: relative;
+  top: 1em;
 }
 #judges div.col li + li {
   position: relative;
@@ -540,21 +549,19 @@ header .hint li + li {
 #judges div.col img {
   float: left;
 }
-#judges div.col p {
-  width: 100%;
-  text-align: center;
-}
-#judges div.col .social {
+#judges .social {
   clear: left;
   font-size: 18px;
   font-size: 1.8rem;
   font-weight: 700;
+  color: #1b1d1f;
+  text-align: center;
   padding: 2em 0 0;
 }
-#judges div.col .tw {
+#judges .tw {
   color: #03b7e4;
 }
-#judges div.col .fb {
+#judges .fb {
   color: #0348e4;
 }
 #sponsors {
@@ -733,6 +740,7 @@ header .hint li + li {
   font-size: 128px;
   font-size: 12.8rem;
   line-height: 128px;
+  font-weight: 700;
 }
 .end-game p {
   margin: 0;
@@ -801,9 +809,6 @@ header .hint li + li {
   }
   #judges figure {
     padding-right: 1%;
-  }
-  #judges div.col ul {
-    padding: 1em 0 0;
   }
   #sponsors .wrap {
     width: 99%;
@@ -884,21 +889,10 @@ header .hint li + li {
     text-align: left;
   }
   #judges div.col ul {
-    width: 365px;
-    margin: 0 auto;
-    padding-top: 0.5em;
-    display: block;
-    float: none;
+    padding-left: 0;
   }
   #judges div.col li img {
     width: 42px;
-  }
-  #judges div.col li + li {
-    float: right;
-    padding-left: 4.4em;
-  }
-  #judges div.col li + li:after {
-    left: 25px;
   }
   #sponsors .first li {
     width: 50%;

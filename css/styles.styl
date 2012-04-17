@@ -354,18 +354,29 @@ header
     p, a { display: block; text-align: left }
 
   div.col
+    @extend .clearfix
     color: $dark-color
     padding-top: 5.5em
+    float: none
+    clear: left
+    margin: 0 auto
+    text-align: center
 
     span
       font-size: 24px
       font-size: 2.4rem
       font-weight: 700
-      float: left
       padding: .5em 0 0
 
-    ul, li { float: left }
+    ul, li
+      display: inline-block
+      text-align: left
+
     ul { padding: 0 0 0 3.75em }
+    li
+      position: relative
+      top: 1em
+
     li + li
       position: relative
       padding: 0 0 0 5.4em
@@ -397,19 +408,17 @@ header
 
     img { float: left }
 
-    p
-      width: 100%
-      text-align: center
+  .social
+    clear: left
+    font-size: 18px
+    font-size: 1.8rem
+    font-weight: 700
+    color: $dark-color
+    text-align: center
+    padding: 2em 0 0
 
-    .social
-      clear: left
-      font-size: 18px
-      font-size: 1.8rem
-      font-weight: 700
-      padding: 2em 0 0
-
-    .tw { color: #03b7e4 }
-    .fb { color: #0348e4 }
+  .tw { color: #03b7e4 }
+  .fb { color: #0348e4 }
 
 // Sponsors ------------------------------------------------------------------
 #sponsors
@@ -547,6 +556,7 @@ header
     font-size: 128px
     font-size: 12.8rem
     line-height: 128px
+    font-weight: 700
 
   p { margin: 0 }
 
@@ -606,7 +616,6 @@ header
   #judges
     img { max-width: 200px }
     figure { padding-right: 1% }
-    div.col ul { padding: 1em 0 0 }
 
   #sponsors
     .wrap { width: 99% }
@@ -668,18 +677,8 @@ header
         padding-top: .5em
         text-align: left
 
-      ul
-        width: 365px
-        margin: 0 auto
-        padding-top: .5em
-        display: block
-        float: none
-
+      ul { padding-left: 0 }
       li img { width: 42px }
-      li + li
-        float: right
-        padding-left: 4.4em
-        &:after { left: 25px }
 
   #sponsors
     .first li { width: 50% }
