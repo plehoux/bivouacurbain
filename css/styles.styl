@@ -14,9 +14,9 @@ html
 body
   font-size: 16px
   font-size: 1.6rem
-  -webkit-hyphens: auto; // no -moz since FF doesn’t support the next two properties
-  -webkit-hyphenate-limit-before: 3;
-  -webkit-hyphenate-limit-after: 5;
+  -webkit-hyphens: auto // no -moz since FF doesn’t support the next two properties
+  -webkit-hyphenate-limit-before: 3
+  -webkit-hyphenate-limit-after: 5
 
 body, legend, input, textarea, button
   font-family: 'pt-sans', 'Helvetica Neue', 'Arial', 'sans-serif'
@@ -24,9 +24,9 @@ body, legend, input, textarea, button
   color: #5d6770
 
 a:link, a:visited { color: $red-color }
-a:focus, a:hover 
+a:focus, a:hover
   color: $red-color
-  text-decoration: underline;
+  text-decoration: underline
 
 p, ul, ol, dl, blockquote, table, figure { margin: .8em 0 }
 
@@ -43,11 +43,11 @@ p, ul, ol, dl, blockquote, table, figure { margin: .8em 0 }
 
 ::selection
   color: #fff
-  background-color: $red-color;
-  
+  background-color: $red-color
+
 ::moz-selection
   color: #fff
-  background-color: $red-color;
+  background-color: $red-color
 
 // Headings ------------------------------------------------------------------
 hgroup > :first-child { margin-bottom: .3em }
@@ -125,14 +125,11 @@ header
   height: 430px
   padding-top: 40%
   background: #e4032e url(../images/header-bg.png) center bottom repeat
-  background:
-  -webkit-linear-gradient(top, rgba(228,3,46,0.2), rgba(50,64,79,0.2)),
-  url(../images/header-bg.png) center bottom repeat,
-  #e4032e
-  
+  background: -webkit-linear-gradient(top, rgba(228,3,46,0.2), rgba(50,64,79,0.2)), url(../images/header-bg.png) center bottom repeat, #e4032e
+
   ::selection { background-color: #000 }
-  ::moz-selection { background-color: #000 } 
-  
+  ::moz-selection { background-color: #000 }
+
   a:link, a:visited { color: #fff }
   a:focus, a:link:hover { color: #fff }
 
@@ -165,25 +162,25 @@ header
     width: 530px; height: 172px
     background: url(../images/bivouac-boulevard-scion.png) left top no-repeat
     text-indent: 100%
-    white-space: nowrap  
+    white-space: nowrap
     overflow: hidden
 
   nav
     position: absolute
-    bottom: 1em; 
+    bottom: 1em
     right: 18px
     text-transform: uppercase
 
     li:first-child { font-weight: 700 }
     li + li { margin: 0 0 0 1em }
     li a
-      padding-bottom: 1em;
-      -webkit-transition: padding 0.1s;
-      
-      &:hover, &:focus 
-        border-bottom: 3px solid #fff;
-        padding-bottom: 0.875em;
-        text-decoration: none;
+      padding-bottom: 1em
+      -webkit-transition: padding 0.1s
+
+      &:hover, &:focus
+        border-bottom: 3px solid #fff
+        padding-bottom: 0.875em
+        text-decoration: none
 
   .hint
     position: absolute
@@ -219,9 +216,9 @@ header
     font-size: 1.8rem
     line-height: 1.3
     font-weight: 400
-    
+
     strong
-      display: block;
+      display: block
       padding: 0 1.5em 0.3em 0
       font-size: 30px
       font-size: 3.0rem
@@ -243,7 +240,7 @@ header
     font-size: 18px
     font-size: 1.8rem
     line-height: 1.2
-    color: $dark-color;
+    color: $dark-color
     font-weight: 700
     padding: 1em 2em 0
 
@@ -261,7 +258,7 @@ header
         color: #5a5f65
         display: block
         font-weight: 400
-        margin-bottom: 0.25em;
+        margin-bottom: 0.25em
 
     span
       color: #a8abb3
@@ -299,17 +296,17 @@ header
 
     -webkit-box-shadow: 0 9px 7px rgba(27,42,78,.05)
     -webkit-transition: all 0.1s ease
-    
+
     &:hover, &:focus
       width: 58%
-      background-color: #ec0f39;
-      text-decoration: none;
+      background-color: #ec0f39
+      text-decoration: none
 
   .wrap > small
     display: block
     width: 55%
     margin: 0 auto
-    color: #a8abb3;
+    color: #a8abb3
     font-size: 12px
     font-size: 1.2rem
     text-align: center
@@ -352,9 +349,9 @@ header
 
   figure
     padding-right: 5.5%
-    text-align: center;
-    
-    p, a { display: block; text-align: left; }
+    text-align: center
+
+    p, a { display: block; text-align: left }
 
   div.col
     color: $dark-color
@@ -388,21 +385,21 @@ header
       float: left
       font-size: 16px
       font-size: 1.6rem
-      line-height: 1.25;
+      line-height: 1.25
       padding: .85em 0 0 1.1em
 
     small
       display: block
-      color: #5D6770;
+      color: #5D6770
       font-weight: 400
       font-size: 16px
       font-size: 1.6rem
 
     img { float: left }
-    
+
     p
-      width: 100%;
-      text-align: center;
+      width: 100%
+      text-align: center
 
 // Sponsors ------------------------------------------------------------------
 #sponsors
@@ -575,19 +572,19 @@ header
   #inscription
     #game
       padding-left: 100px
-      background-size: 90px;
+      background-size: 90px
       width: 35%
 
     #animation
       padding-left: 73px
-      background-size: 60px;
+      background-size: 60px
       width: 31%
 
     #painting
       padding-left: 65px
       float: right
       width: 33%
-      background-size: 48px;
+      background-size: 48px
 
     #game, #animation, #painting
       background-position: 0 5px
@@ -633,7 +630,7 @@ header
       div { height: 96px }
       p { padding-top: 0.5em }
       &:after
-        left: 18px;
+        left: 18px
 
     blockquote + blockquote { padding-top: 3em }
 
@@ -687,7 +684,7 @@ header
   .col
     padding-left: 0 !important
     padding-right: 0 !important
-    
+
   #intro
     div.col
       display: block
@@ -697,7 +694,7 @@ header
       font-weight: 400
 
       strong
-        display: block;
+        display: block
         padding: 0 1.5em 0.5em 0
         font-size: 24px
         font-size: 2.1rem
@@ -713,11 +710,11 @@ header
       padding: 1em 1em 0
 
     li { padding-left: 105px !important }
-  
+
   #testimonials
     blockquote:after
       left: 5px
-  
+
   #judges
     div.col
       width: 100%

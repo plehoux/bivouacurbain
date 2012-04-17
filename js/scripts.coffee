@@ -78,7 +78,7 @@ class Bivouac.Invaders
     $('.key').remove()
     globals.$header.addClass 'playing'
     globals.$figure.addClass 'ship'
-    
+
     window.onblur = (e) =>
       @isGoing.left = false
       @isGoing.right = false
