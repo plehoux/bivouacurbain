@@ -276,20 +276,20 @@ header figure .key {
   border-radius: 19px;
 }
 header figure .key:nth-child(2) {
-  bottom: 187px;
-  right: 146px;
+  bottom: 32.5%;
+  right: 31.6%;
 }
 header figure .key:nth-child(3) {
-  bottom: 169px;
-  right: 129px;
+  bottom: 29.3%;
+  right: 27.9%;
 }
 header figure .key:nth-child(4) {
-  bottom: 152px;
-  right: 147px;
+  bottom: 26.3%;
+  right: 31.6%;
 }
 header figure .key:nth-child(5) {
-  bottom: 169px;
-  right: 164px;
+  bottom: 29.3%;
+  right: 35.4%;
 }
 header h1 {
   position: absolute;
@@ -334,6 +334,7 @@ header .hint li {
   float: left;
   width: 24px;
   height: 24px;
+  line-height: 24px;
   color: #ff8a8a;
   font-size: 12px;
   font-size: 1.2rem;
@@ -828,6 +829,22 @@ header .hint li + li {
   .col-3 {
     width: 100%;
   }
+  header figure {
+    display: none;
+  }
+  header .hint {
+    display: none;
+  }
+  header h1 {
+    width: 80%;
+    top: 10%;
+    bottom: auto;
+    margin: 0 auto;
+  }
+  header nav li a:hover,
+  header nav li a:focus {
+    padding-bottom: 0.95em;
+  }
   #inscription #game,
   #inscription #animation,
   #inscription #painting {
@@ -844,6 +861,10 @@ header .hint li + li {
     background-position: 20px 10px;
   }
   #inscription a {
+    width: 94.5%;
+  }
+  #inscription a:hover,
+  #inscription a:focus {
     width: 94.5%;
   }
   #inscription .wrap > small {
@@ -965,5 +986,10 @@ header .hint li + li {
   }
   #judges div.col li + li:after {
     display: none;
+  }
+}
+@media (max-width: 348px) {
+  header nav li + li {
+    margin: 0 0 0 0.3em;
   }
 }

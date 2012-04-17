@@ -153,10 +153,10 @@ header
       width: 19px; height: 19px
       border-radius: 19px
 
-      &:nth-child(2) { bottom: 187px; right: 146px }
-      &:nth-child(3) { bottom: 169px; right: 129px }
-      &:nth-child(4) { bottom: 152px; right: 147px }
-      &:nth-child(5) { bottom: 169px; right: 164px }
+      &:nth-child(2) { bottom: 32.5%; right: 31.6% }
+      &:nth-child(3) { bottom: 29.3%; right: 27.9% }
+      &:nth-child(4) { bottom: 26.3%; right: 31.6% }
+      &:nth-child(5) { bottom: 29.3%; right: 35.4% }
 
   h1
     position: absolute
@@ -192,6 +192,7 @@ header
       display: block
       float: left
       width: 24px; height: 24px
+      line-height: 24px
       color: #ff8a8a
       font-size: 12px
       font-size: 1.2rem
@@ -626,6 +627,18 @@ header
   .wrap { min-width: 460px }
   .col-2, .col-3 { width: 100% }
 
+  header
+    figure { display: none }
+    .hint { display: none }
+
+    h1
+      width: 80%
+      top: 10%; bottom: auto
+      margin: 0 auto
+
+    nav li a
+      &:hover, &:focus { padding-bottom: .95em }
+
   #inscription
     #game, #animation, #painting
       padding-left: 105px
@@ -641,6 +654,8 @@ header
       background-position: 20px 10px
 
     a { width: 94.5% }
+    a:hover, a:focus { width: 94.5% }
+
     .wrap > small { width: 96% }
 
   #testimonials
@@ -744,3 +759,6 @@ header
         padding-left: 0
         &:after { display: none }
 
+@media (max-width: 348px)
+  header nav li + li
+    margin: 0 0 0 .3em
