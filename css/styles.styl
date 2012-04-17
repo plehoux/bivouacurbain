@@ -642,6 +642,26 @@ header
     nav li a
       &:hover, &:focus { padding-bottom: .95em }
 
+  section
+    overflow: hidden
+
+    &:before
+      position: absolute
+      top: -75px; left: -144px
+      width: 288px; height: 192px
+      background: url(../images/side-fold.png) center top no-repeat
+      -webkit-background-size: 100%
+
+    &:after
+      z-index: -1
+      display: block
+      content: ''
+      position: absolute
+      top: -75px; right: -144px
+      width: 288px; height: 192px
+      background: url(../images/side-fold.png) center top no-repeat
+      -webkit-background-size: 100%
+
   #inscription
     #game, #animation, #painting
       padding-left: 105px
