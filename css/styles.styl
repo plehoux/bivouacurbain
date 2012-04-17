@@ -460,6 +460,22 @@ header
     opacity: 0
     -webkit-transition: opacity .4s ease-out
 
+.score, .score-increment
+  position: absolute
+  bottom: 5px; left: 10px
+  color: #fff
+  font-size: 22px
+  font-size: 2.2rem
+  font-weight: 700
+
+.score-increment
+  bottom: 25px; left: 56px
+  -webkit-transition: bottom .4s ease-out, opacity .4s ease-out
+
+  &.animate
+    bottom: 75px
+    opacity: 0
+
 .ship
   -webkit-transition: -webkit-transform .4s ease-out
   -webkit-transform: rotate(-90deg) scale(.3) translate3d(-560px,0,0)
@@ -486,6 +502,11 @@ header
   float: left
   margin: 5px 3px
   background: url(../images/enemies.spr.png) left top no-repeat
+  -webkit-transform: scale(1)
+  -webkit-transition: -webkit-transform .3s ease-in-out
+
+  &.hidden
+    -webkit-transform: scale(0)
 
   &.paolo
     background-position: 0 0
@@ -505,6 +526,38 @@ header
     opacity: 0
 
     -webkit-transition: top .4s ease-in-out, opacity .4s ease-out
+
+.end-game
+  position: relative
+  top: 124px
+  font-size: 38px
+  font-size: 3.8rem
+  color: #fff
+  text-align: center
+  -webkit-transition: top .4s ease-out, opacity .4s ease-out
+
+  & > span
+    font-size: 128px
+    font-size: 12.8rem
+    line-height: 128px
+
+  p { margin: 0 }
+
+  .social-share
+    position: relative
+    top: 8px; left: 50%
+    margin-left: -85px
+    -webkit-transition: top .5s ease-out, opacity .5s ease-out
+
+    * { float: left }
+
+    &.hidden
+      top: -35px
+      opacity: 0
+
+  &.hidden
+    top: 175px
+    opacity: 0
 
 // Media Queries -------------------------------------------------------------
 @media (min-width: 1317px)

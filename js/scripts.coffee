@@ -51,8 +51,11 @@ class Bivouac.Invaders
     @bullets = []
     @offset = 0
     @speed = 0
+    @score = 0
     @isShooting = false
-    @startTime = new Date()
+    @enemiesClass = ['paolo', 'ramiro', 'zach']
+    @enemiesClassIndex = 4
+    @countdown = 7000
     @isGoing =
       left: false
       right: false
@@ -60,9 +63,13 @@ class Bivouac.Invaders
     this.init()
     this.initKeyboard()
     this.addEnemies()
-    # this.addTimer()
+    this.addScoreSpan()
 
-    setInterval =>
+    @rowTimeout = setTimeout =>
+      this.addRow()
+    , @countdown
+
+    @gameTimer = setInterval =>
       this.render()
     , 16
 
@@ -98,7 +105,6 @@ class Bivouac.Invaders
     this.moveShip()
     this.moveBullets()
     this.shootBullet() if @isShooting && @bullets.length < 1
-    # console.log new Date() - @startTime
 
   moveShip: ->
     shipPosition = @ship.offset()
@@ -148,6 +154,7 @@ class Bivouac.Invaders
           this.removeBullet()
           enemy.addClass 'dead'
           @enemies.splice i, 1
+          this.addScore enemy.data('row') * 10
           return
 
       bullet.offsetX += 30
@@ -161,20 +168,100 @@ class Bivouac.Invaders
   # Enemies management
   addEnemies: ->
     @enemies = []
-    enemies = $('<div class="enemies"></div>')
+    @enemiesContainer = $('<div class="enemies"></div>')
 
     for i in [0..29]
-      enemy = $('<span class="enemy"></span>')
-      enemy.addClass ['paolo', 'ramiro', 'zach'][Math.floor(i/10 % 10)]
-      enemies.append enemy
-      @enemies.push enemy
+      classIndex = Math.floor(i/10 % 10)
+      enemy = this.createEnemy classIndex, classIndex + 1
+      enemy.addClass 'hidden'
+      delay = Math.floor(Math.random() * 10 + 5)
+      enemy.css '-webkit-transition-delay', "0.0#{delay}s"
 
-    globals.$header.children().append enemies
+    setTimeout =>
+      for enemy in @enemies
+        enemy.removeClass 'hidden'
+    , 100
+
+    globals.$header.children().append @enemiesContainer
+
+  createEnemy: (classIndex, row) ->
+    enemy = $('<span class="hidden enemy"></span>')
+    enemy.addClass @enemiesClass[classIndex]
+    enemy.data 'row', row
+
+    @enemiesContainer.prepend enemy
+    @enemies.push enemy
+
+    enemy
+
+  addRow: ->
+    for i in [0..9]
+      enemy = this.createEnemy @enemiesClassIndex % @enemiesClass.length, @enemiesClassIndex
+      enemy.removeClass 'hidden'
+
+    if @enemiesClassIndex - $('.enemy').not('.dead').last().data('row') == 5
+      this.endGame()
+      return
+
+    @enemiesClassIndex++
+    @countdown -= 250 if @countdown > 3000
+
+    setTimeout =>
+      this.addRow()
+    , @countdown
+
+  # Score management
+  addScoreSpan: ->
+    @scoreSpan = $('<span class="score">Score: 0</span>')
+    globals.$header.append @scoreSpan
+
+  addScore: (score) ->
+    @score += score
+    @scoreSpan.html "Score: #{@score}"
+
+    incrementSpan = $("<span class='score-increment'>+ #{score}</span>")
+    globals.$header.append incrementSpan
+
+    @rowTimeout = setTimeout ->
+      incrementSpan.addClass 'animate'
+    , 0
+
+  endGame: ->
+    $('.enemy').not('.dead').addClass('dead')
+    @enemies = []
+    this.removeBullet()
+    clearInterval @gameTimer
+    clearTimeout @rowTimeout
+
+    endGame = $("""
+      <div class="end-game hidden">
+        <span>Game Over</span>
+        <p>You scored #{@score}</p>
+        <div class="social-share hidden">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bivouacurbain.com" data-text="I scored #{@score} points! Can you beat me?" data-via="bivouacurbain" data-hashtags="easteregg">Tweet</a>
+          <div class="fb-like" data-href="http://bivouacurbain.com" data-send="false" data-layout="button_count" data-width="250" data-show-faces="false" data-font="lucida grande"></div>
+        </div>
+
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/fr_CA/all.js#xfbml=1&appId=259990290693706";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+      </div>
+    """)
+
+    globals.$header.append endGame
+    setTimeout =>
+      endGame.removeClass 'hidden'
+      setTimeout =>
+        $('.social-share').removeClass 'hidden'
+      , 850
+    , 500
 
 
 new Bivouac.App()
-
-
-# Array.random()
-Array::random = ->
-  this[Math.floor(Math.random() * this.length)]

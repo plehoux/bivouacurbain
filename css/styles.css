@@ -628,6 +628,25 @@ header .hint li + li {
   opacity: 0;
   -webkit-transition: opacity 0.4s ease-out;
 }
+.score,
+.score-increment {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  color: #fff;
+  font-size: 22px;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.score-increment {
+  bottom: 25px;
+  left: 56px;
+  -webkit-transition: bottom 0.4s ease-out, opacity 0.4s ease-out;
+}
+.score-increment.animate {
+  bottom: 75px;
+  opacity: 0;
+}
 .ship {
   -webkit-transition: -webkit-transform 0.4s ease-out;
   -webkit-transform: rotate(-90deg) scale(0.3) translate3d(-560px, 0, 0);
@@ -658,6 +677,11 @@ header .hint li + li {
   float: left;
   margin: 5px 3px;
   background: url("../images/enemies.spr.png") left top no-repeat;
+  -webkit-transform: scale(1);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+}
+.enemy.hidden {
+  -webkit-transform: scale(0);
 }
 .enemy.paolo {
   background-position: 0 0;
@@ -682,6 +706,41 @@ header .hint li + li {
   top: 75px;
   opacity: 0;
   -webkit-transition: top 0.4s ease-in-out, opacity 0.4s ease-out;
+}
+.end-game {
+  position: relative;
+  top: 124px;
+  font-size: 38px;
+  font-size: 3.8rem;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: top 0.4s ease-out, opacity 0.4s ease-out;
+}
+.end-game > span {
+  font-size: 128px;
+  font-size: 12.8rem;
+  line-height: 128px;
+}
+.end-game p {
+  margin: 0;
+}
+.end-game .social-share {
+  position: relative;
+  top: 8px;
+  left: 50%;
+  margin-left: -85px;
+  -webkit-transition: top 0.5s ease-out, opacity 0.5s ease-out;
+}
+.end-game .social-share * {
+  float: left;
+}
+.end-game .social-share.hidden {
+  top: -35px;
+  opacity: 0;
+}
+.end-game.hidden {
+  top: 175px;
+  opacity: 0;
 }
 @media (min-width: 1317px) {
   header {

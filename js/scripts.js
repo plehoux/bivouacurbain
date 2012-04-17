@@ -74,8 +74,11 @@
       this.bullets = [];
       this.offset = 0;
       this.speed = 0;
+      this.score = 0;
       this.isShooting = false;
-      this.startTime = new Date();
+      this.enemiesClass = ['paolo', 'ramiro', 'zach'];
+      this.enemiesClassIndex = 4;
+      this.countdown = 7000;
       this.isGoing = {
         left: false,
         right: false
@@ -83,7 +86,11 @@
       this.init();
       this.initKeyboard();
       this.addEnemies();
-      setInterval(function() {
+      this.addScoreSpan();
+      this.rowTimeout = setTimeout(function() {
+        return _this.addRow();
+      }, this.countdown);
+      this.gameTimer = setInterval(function() {
         return _this.render();
       }, 16);
     }
@@ -187,6 +194,7 @@
             this.removeBullet();
             enemy.addClass('dead');
             this.enemies.splice(i, 1);
+            this.addScore(enemy.data('row') * 10);
             return;
           }
         }
@@ -203,16 +211,90 @@
     };
 
     Invaders.prototype.addEnemies = function() {
-      var enemies, enemy, i;
+      var classIndex, delay, enemy, i,
+        _this = this;
       this.enemies = [];
-      enemies = $('<div class="enemies"></div>');
+      this.enemiesContainer = $('<div class="enemies"></div>');
       for (i = 0; i <= 29; i++) {
-        enemy = $('<span class="enemy"></span>');
-        enemy.addClass(['paolo', 'ramiro', 'zach'][Math.floor(i / 10 % 10)]);
-        enemies.append(enemy);
-        this.enemies.push(enemy);
+        classIndex = Math.floor(i / 10 % 10);
+        enemy = this.createEnemy(classIndex, classIndex + 1);
+        enemy.addClass('hidden');
+        delay = Math.floor(Math.random() * 10 + 5);
+        enemy.css('-webkit-transition-delay', "0.0" + delay + "s");
       }
-      return globals.$header.children().append(enemies);
+      setTimeout(function() {
+        var enemy, _i, _len, _ref, _results;
+        _ref = _this.enemies;
+        _results = [];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          enemy = _ref[_i];
+          _results.push(enemy.removeClass('hidden'));
+        }
+        return _results;
+      }, 100);
+      return globals.$header.children().append(this.enemiesContainer);
+    };
+
+    Invaders.prototype.createEnemy = function(classIndex, row) {
+      var enemy;
+      enemy = $('<span class="hidden enemy"></span>');
+      enemy.addClass(this.enemiesClass[classIndex]);
+      enemy.data('row', row);
+      this.enemiesContainer.prepend(enemy);
+      this.enemies.push(enemy);
+      return enemy;
+    };
+
+    Invaders.prototype.addRow = function() {
+      var enemy, i,
+        _this = this;
+      for (i = 0; i <= 9; i++) {
+        enemy = this.createEnemy(this.enemiesClassIndex % this.enemiesClass.length, this.enemiesClassIndex);
+        enemy.removeClass('hidden');
+      }
+      if (this.enemiesClassIndex - $('.enemy').not('.dead').last().data('row') === 5) {
+        this.endGame();
+        return;
+      }
+      this.enemiesClassIndex++;
+      if (this.countdown > 3000) this.countdown -= 250;
+      return setTimeout(function() {
+        return _this.addRow();
+      }, this.countdown);
+    };
+
+    Invaders.prototype.addScoreSpan = function() {
+      this.scoreSpan = $('<span class="score">Score: 0</span>');
+      return globals.$header.append(this.scoreSpan);
+    };
+
+    Invaders.prototype.addScore = function(score) {
+      var incrementSpan;
+      this.score += score;
+      this.scoreSpan.html("Score: " + this.score);
+      incrementSpan = $("<span class='score-increment'>+ " + score + "</span>");
+      globals.$header.append(incrementSpan);
+      return this.rowTimeout = setTimeout(function() {
+        return incrementSpan.addClass('animate');
+      }, 0);
+    };
+
+    Invaders.prototype.endGame = function() {
+      var endGame,
+        _this = this;
+      $('.enemy').not('.dead').addClass('dead');
+      this.enemies = [];
+      this.removeBullet();
+      clearInterval(this.gameTimer);
+      clearTimeout(this.rowTimeout);
+      endGame = $("<div class=\"end-game hidden\">\n  <span>Game Over</span>\n  <p>You scored " + this.score + "</p>\n  <div class=\"social-share hidden\">\n    <a href=\"https://twitter.com/share\" class=\"twitter-share-button\" data-url=\"http://bivouacurbain.com\" data-text=\"I scored " + this.score + " points! Can you beat me?\" data-via=\"bivouacurbain\" data-hashtags=\"easteregg\">Tweet</a>\n    <div class=\"fb-like\" data-href=\"http://bivouacurbain.com\" data-send=\"false\" data-layout=\"button_count\" data-width=\"250\" data-show-faces=\"false\" data-font=\"lucida grande\"></div>\n  </div>\n\n  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=\"//platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>\n\n  <div id=\"fb-root\"></div>\n  <script>(function(d, s, id) {\n    var js, fjs = d.getElementsByTagName(s)[0];\n    if (d.getElementById(id)) return;\n    js = d.createElement(s); js.id = id;\n    js.src = \"//connect.facebook.net/fr_CA/all.js#xfbml=1&appId=259990290693706\";\n    fjs.parentNode.insertBefore(js, fjs);\n  }(document, 'script', 'facebook-jssdk'));</script>\n</div>");
+      globals.$header.append(endGame);
+      return setTimeout(function() {
+        endGame.removeClass('hidden');
+        return setTimeout(function() {
+          return $('.social-share').removeClass('hidden');
+        }, 850);
+      }, 500);
     };
 
     return Invaders;
@@ -220,9 +302,5 @@
   })();
 
   new Bivouac.App();
-
-  Array.prototype.random = function() {
-    return this[Math.floor(Math.random() * this.length)];
-  };
 
 }).call(this);
