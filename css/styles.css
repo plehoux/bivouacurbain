@@ -794,7 +794,7 @@ header .hint li + li {
   #inscription #animation {
     padding-left: 73px;
     background-size: 60px;
-    width: 31%;
+    width: 32%;
   }
   #inscription #painting {
     padding-left: 65px;
@@ -975,7 +975,6 @@ header .hint li + li {
   #judges div.col span {
     font-size: 22px;
     font-size: 2.2rem;
-    text-align: left;
   }
   #judges div.col h3 {
     padding-left: 0.3em;
