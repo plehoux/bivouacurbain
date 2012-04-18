@@ -151,7 +151,9 @@ header
       position: absolute
       display: block
       width: 19px; height: 19px
+
       border-radius: 19px
+      -moz-border-radius: 19px
 
       &:nth-child(2) { bottom: 32.5%; right: 31.6% }
       &:nth-child(3) { bottom: 29.3%; right: 27.9% }
@@ -177,6 +179,10 @@ header
     li a
       padding-bottom: 1em
       -webkit-transition: padding 0.1s
+      -moz-transition: padding 0.1s
+      -ms-transition: padding 0.1s
+      -o-transition: padding 0.1s
+      transition: padding 0.1s
 
       &:hover, &:focus
         border-bottom: 3px solid #fff
@@ -197,7 +203,9 @@ header
       font-size: 12px
       font-size: 1.2rem
       text-align: center
+
       border-radius: 24px
+      -moz-border-radius: 24px
 
       &.valid
         background-color: #fff
@@ -235,7 +243,12 @@ header
 #inscription, #registration
   ol
     padding: 0 2%
+
     -webkit-hyphens: none
+    -moz-hyphens: none
+    -ms-hyphens: none
+    -o-hyphens: none
+    hyphens: none
 
   li
     float: left
@@ -294,10 +307,21 @@ header
     text-align: center
     padding: .7em 0
     background-color: $red-color
+
     border-radius: 65px
+    -moz-border-radius: 65px
 
     -webkit-box-shadow: 0 9px 7px rgba(27,42,78,.05)
+    -moz-box-shadow: 0 9px 7px rgba(27,42,78,.05)
+    -ms-box-shadow: 0 9px 7px rgba(27,42,78,.05)
+    -o-box-shadow: 0 9px 7px rgba(27,42,78,.05)
+    box-shadow: 0 9px 7px rgba(27,42,78,.05)
+
     -webkit-transition: all 0.1s ease
+    -moz-transition: all 0.1s ease
+    -ms-transition: all 0.1s ease
+    -o-transition: all 0.1s ease
+    transition: all 0.1s ease
 
     &:hover, &:focus
       width: 58%
@@ -321,6 +345,10 @@ header
     padding-right: 4.6em
     background: url(../images/blockquote-bg.png) left bottom no-repeat
     -webkit-background-size: 90% 79px
+    -moz-background-size: 90% 79px
+    -ms-background-size: 90% 79px
+    -o-background-size: 90% 79px
+    background-size: 90% 79px
 
     &:after
       position: absolute
@@ -483,6 +511,10 @@ header
   h1, nav, .hint
     opacity: 0
     -webkit-transition: opacity .4s ease-out
+    -moz-transition: opacity .4s ease-out
+    -ms-transition: opacity .4s ease-out
+    -o-transition: opacity .4s ease-out
+    transition: opacity .4s ease-out
 
 .score, .score-increment
   position: absolute
@@ -495,6 +527,10 @@ header
 .score-increment
   bottom: 25px; left: 56px
   -webkit-transition: bottom .4s ease-out, opacity .4s ease-out
+  -moz-transition: bottom .4s ease-out, opacity .4s ease-out
+  -ms-transition: bottom .4s ease-out, opacity .4s ease-out
+  -o-transition: bottom .4s ease-out, opacity .4s ease-out
+  transition: bottom .4s ease-out, opacity .4s ease-out
 
   &.animate
     bottom: 75px
@@ -502,10 +538,25 @@ header
 
 .ship
   width: 466px
-  -webkit-transition: -webkit-transform .4s ease-out
-  -webkit-transform: rotate(-90deg) scale(.3) translate3d(-560px,0,0)
 
-  img { -webkit-transform: translate3d(0,0,0) }
+  -webkit-transition: -webkit-transform .4s ease-out
+  -moz-transition: -moz-transform .4s ease-out
+  -ms-transition: -ms-transform .4s ease-out
+  -o-transition: -o-transform .4s ease-out
+  transition: transform .4s ease-out
+
+  -webkit-transform: rotate(-90deg) scale(.3) translate3d(-560px,0,0)
+  -moz-transform: rotate(-90deg) scale(.3) translateX(-560px)
+  -ms-transform: rotate(-90deg) scale(.3) translateX(-560px)
+  -o-transform: rotate(-90deg) scale(.3) translateX(-560px)
+  transform: rotate(-90deg) scale(.3) translateX(-560px)
+
+  img
+    -webkit-transform: translate3d(0,0,0)
+    -moz-transform: translateX(0)
+    -ms-transform: translateX(0)
+    -o-transform: translateX(0)
+    transform: translateX(0)
 
   .bullet
     position: absolute
@@ -513,8 +564,10 @@ header
     display: block
     width: 125px; height: 20px
     background-color: #fff
-    border-radius: 20px
     margin: -20px 0 0 0
+
+    border-radius: 20px
+    -moz-border-radius: 20px
 
 .enemies
   position: relative
@@ -527,11 +580,25 @@ header
   float: left
   margin: 5px 3px
   background: url(../images/enemies.spr.png) left top no-repeat
+
   -webkit-transform: scale(1)
+  -moz-transform: scale(1)
+  -ms-transform: scale(1)
+  -o-transform: scale(1)
+  transform: scale(1)
+
   -webkit-transition: -webkit-transform .3s ease-in-out
+  -moz-transition: -moz-transform .3s ease-in-out
+  -ms-transition: -ms-transform .3s ease-in-out
+  -o-transition: -o-transform .3s ease-in-out
+  transition: transform .3s ease-in-out
 
   &.hidden
     -webkit-transform: scale(0)
+    -moz-transform: scale(0)
+    -ms-transform: scale(0)
+    -o-transform: scale(0)
+    transform: scale(0)
 
   &.paolo
     background-position: 0 0
@@ -551,6 +618,10 @@ header
     opacity: 0
 
     -webkit-transition: top .4s ease-in-out, opacity .4s ease-out
+    -moz-transition: top .4s ease-in-out, opacity .4s ease-out
+    -ms-transition: top .4s ease-in-out, opacity .4s ease-out
+    -o-transition: top .4s ease-in-out, opacity .4s ease-out
+    transition: top .4s ease-in-out, opacity .4s ease-out
 
 .end-game
   position: absolute
@@ -560,7 +631,12 @@ header
   color: #fff
   text-align: center
   width: 100%
+
   -webkit-transition: top .4s ease-out, opacity .4s ease-out
+  -moz-transition: top .4s ease-out, opacity .4s ease-out
+  -ms-transition: top .4s ease-out, opacity .4s ease-out
+  -o-transition: top .4s ease-out, opacity .4s ease-out
+  transition: top .4s ease-out, opacity .4s ease-out
 
   & > span
     font-size: 128px
@@ -574,7 +650,12 @@ header
     position: relative
     top: 8px; left: 50%
     margin-left: -85px
+
     -webkit-transition: top .5s ease-out, opacity .5s ease-out
+    -moz-transition: top .5s ease-out, opacity .5s ease-out
+    -ms-transition: top .5s ease-out, opacity .5s ease-out
+    -o-transition: top .5s ease-out, opacity .5s ease-out
+    transition: top .5s ease-out, opacity .5s ease-out
 
     * { float: left }
 
@@ -664,7 +745,12 @@ header
       top: -75px; left: -144px
       width: 288px; height: 192px
       background: url(../images/side-fold.png) center top no-repeat
+
       -webkit-background-size: 100%
+      -moz-background-size: 100%
+      -ms-background-size: 100%
+      -o-background-size: 100%
+      background-size: 100%
 
     &:after
       z-index: -1
@@ -674,7 +760,12 @@ header
       top: -75px; right: -144px
       width: 288px; height: 192px
       background: url(../images/side-fold.png) center top no-repeat
+
       -webkit-background-size: 100%
+      -moz-background-size: 100%
+      -ms-background-size: 100%
+      -o-background-size: 100%
+      background-size: 100%
 
   #inscription, #registration
     #game, #animation, #painting
