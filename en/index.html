@@ -22,14 +22,15 @@
 
     <header>
       <div class="wrap">
+        <div class="height-hack"></div>
         <figure><img itemprop="image" src="../images/bivouac-logo.png" alt="Bivouac Boulevard Scion"></figure>
-        <h1 itemprop="name">Bivouac Boulevard Scion</h1>
+        <h1 itemprop="name"><img src="../images/bivouac-boulevard-scion.png" alt="Bivouac Boulevard Scion"></h1>
         <nav>
           <ul>
-            <li><a href="#">Registration</a></li>
-            <li><a href="#">Blog</a></li>
+            <li><a href="#inscription">Inscription</a></li>
+            <li><a href="http://blog.bivouacurbain.com">Blogue</a></li>
             <li><a href="../?locale=fr">Français</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="mailto:plehoux@gmail.com">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -38,18 +39,16 @@
     <section id="intro" itemprop="description">
       <div class="wrap">
         <div class="col col-2">
-          Le plus gros campement de création numérique au monde!
-          <small>
+          <strong>Le plus gros campement de création numérique au monde!</strong>
             Du <time itemprop="startDate" datetime="2012-06-14T17:00-04:00">14</time>
             au <time itemprop="endDate" datetime="2012-06-17T12:00-04:00">17 juin</time>
-            <span itemprop="location" itemscope itemtype="http://schema.org/Place">sur le quai de
-              l’<span itemprop="name">Espace 400<sup>e</sup></span> à
+            <span itemprop="location" itemscope itemtype="http://schema.org/Place"><a href="http://maps.google.com/maps/place?cid=9473829206945049037">sur le quai de
+              l’<span itemprop="name">Espace 400<sup>e</sup></a></span> à
               <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                 <span itemprop="addressRegion">Québec</span>
               </span>
               <link itemprop="maps" href="http://maps.google.com/maps/place?cid=9473829206945049037">
             </span>et en direct sur le web!
-          </small>
         </div>
         <p class="col col-2">
           Le Bivouac c’est <b>48 heures</b> pour <b>créer un jeu vidéo</b>, un <b>court-métrage 2D/3D</b> ou une <b>peinture numérique</b>! Les participants courent la chance de gagner <b>plus de 10 000$ en prix</b>. Le dimanche 17 juin toute la ville de Québec est invitée à venir essayer les créations et assister à leur présentation sur scène!
@@ -59,27 +58,36 @@
 
     <section id="inscription">
       <div class="wrap">
-        <h2>Registration</h2>
+        <h2>Inscription</h2>
         <ol>
-          <li id="game" class="col col-3">Video game creation <small>Team (1 to 5)</small></li>
-          <li id="animation" class="col col-3">2D/3D short film creation <small>Team (1 to 5)</small></li>
-          <li id="painting" class="col col-3">Digital painting creation <small>Solo</small></li>
+          <li id="game" class="col col-3">
+              <h3>Création de jeu vidéo <small>Équipe (1 à 5)</small></h3>
+              <span>présenté par Collège Bart</span>
+          </li>
+          <li id="animation" class="col col-3">
+            <h3>Création de court métrage 2D/3D <small>Équipe (1 à 5)</small></h3>
+            <span>présenté par Desjardins Caisse du Centre-Ville de Québec</span>
+          </li>
+          <li id="painting" class="col col-3">
+            <h3>Création de peinture numérique <small>Solo</small></h3>
+            <span>présenté par Boulevard Scion</span>
+          </li>
         </ol>
-        <a href="http://bivouac2012.eventbrite.ca/" target="_blank">Register! 99$/person</a>
-        <small>Registration includes 8 meals, snacks, Red Bull, coffee, juice, dormitory (bring your sleeping bag), a t-shirt, massages and many other surprises!</small>
+        <a href="http://bivouac2012.eventbrite.ca/" target="_blank"><strong>Inscrivez-vous!</strong> 99$/personne</a>
+        <small>L’inscription comprend 8 repas, des collations, du Red Bull, du café, du jus à volonté, un dortoir (apportez votre sac de couchage), un t-shirt, des massages et un tas d’autres surprises!</small>
       </div>
     </section>
 
     <section id="testimonials">
       <div class="wrap">
-        <h2>Testimonials</h2>
+        <h2>Témoignages</h2>
         <blockquote class="col col-2">
-          Pour Berzerk Studio, le Bivouac est non seulement une excellente occasion de rencontrer des développeurs talentueux, mais également d’améliorer nos techniques de travail. Nous ne raterons certainement pas l’événement cette année.
+          Pour Berzerk Studio, le Bivouac est non seulement une excellente occasion de rencontrer des développeurs talentueux, mais également d’améliorer nos techniques de travail. Cette expérience nous a énormément instruit et nous ne raterons certainement pas l’événement cette année.
           <div>
             <img src="../images/berzerk-studio.png" alt="Berzerk Studio">
             <p>
               <span>Simon Lachance</span>
-              co-founder @ <a href="http://www.berzerk-land.com/">Berzerk Studio</a>
+              co-fondateur de <a href="http://www.berzerk-land.com/">Berzerk Studio</a>
             </p>
           </div>
         </blockquote>
@@ -89,7 +97,7 @@
             <img src="../images/juicy-beast-studio.png" alt="Juicy Beast Studio">
             <p>
               <span>Yowan Langlais</span>
-              co-founder @ <a href="http://www.juicybeast.com/">Juicy Beast Studio</a>
+              co-fondateur de <a href="http://www.juicybeast.com/">Juicy Beast Studio</a>
             </p>
           </div>
         </blockquote>
@@ -160,47 +168,49 @@
           </figcaption>
         </figure>
         <div class="col">
-          <span>Live broadcast hosted by</span>
+          <span>Diffusion en direct animée par</span>
           <ul>
             <li>
               <img src="../images/camille-dg.png" alt="Camille DG">
-              <h3>Camille DG <small>Host</small></h3>
+              <h3><a href="http://camilledg.com/">Camille DG</a> <small>Animatrice</small></h3>
             </li>
             <li>
               <img src="../images/adam-atomic.png" alt="Adam Atomic">
-              <h3>Adam Atomic <small>Video game analyst</small></h3>
+              <h3><a href="http://www.adamatomic.com/">Adam Atomic</a> <small>Analyste jeux vidéo</small></h3>
             </li>
           </ul>
         </div>
+        <p class="social">Suivez-nous sur <a href="http://twitter.com/bivouacurbain" class="tw">Twitter</a> et donnez-nous de l’amour sur <a href="https://www.facebook.com/Bivouacurbain" class="fb">Facebook</a></p>
       </div>
     </section>
 
     <section id="sponsors">
       <div class="wrap">
-        <h2>Thanks to our precious sponsors!</h2>
+        <h2>Merci à nos précieux partenaires!</h2>
         <ul class="first">
           <li><a href="http://www.bcn.gouv.qc.ca/"><img data-id="1" src="../images/sponsors/bureau-quebec.png" alt="Bureau de la Capitale-Nationale"></a></li>
           <li><a href="http://www.boulevardscion.com/"><img data-id="2" src="../images/sponsors/boulevard-scion.png" alt="Boulevard Scion"></a></li>
-          <li><a href="http://www.ville.quebec.qc.ca/en/"><img data-id="3" src="../images/sponsors/ville-quebec.png" alt="Ville de Québec"></a></li>
+          <li><a href="http://www.ville.quebec.qc.ca/"><img data-id="3" src="../images/sponsors/ville-quebec.png" alt="Ville de Québec"></a></li>
         </ul>
         <ul class="second">
           <li><a href="http://www.bart.qc.ca/"><img data-id="4" src="../images/sponsors/college-bart.png" alt="Collège Bart"></a></li>
-          <li><a href="http://www.desjardins.com/en/"><img data-id="5" src="../images/sponsors/desjardins.png" alt="Desjardins Caisse du Centre-Ville de Québec"></a></li>
+          <li><a href="http://www.desjardins.com/fr/"><img data-id="5" src="../images/sponsors/desjardins.png" alt="Desjardins Caisse du Centre-Ville de Québec"></a></li>
         </ul>
         <ul class="third">
-          <li><a href="http://www.beenox.com/en"><img data-id="6" src="../images/sponsors/beenox.png" alt="Beenox"></a></li>
-          <li><a href="http://frimastudio.com/en"><img data-id="7" src="../images/sponsors/frima.png" alt="Frima"></a></li>
+          <li><a href="http://www.beenox.com/fr"><img data-id="6" src="../images/sponsors/beenox.png" alt="Beenox"></a></li>
+          <li><a href="http://frimastudio.com/fr"><img data-id="7" src="../images/sponsors/frima.png" alt="Frima"></a></li>
           <li><a href="http://www.ubi.com/"><img data-id="8" src="../images/sponsors/ubisoft.png" alt="Ubisoft"></a></li>
-          <li><a href="http://www.cegep-matane.qc.ca/"><img data-id="9" src="../images/sponsors/cegep-matane.png" alt="Cégep de Matane"></a></li>
+          <!-- <li><a href="http://www.cegep-matane.qc.ca/"><img data-id="9" src="../images/sponsors/cegep-matane.png" alt="Cégep de Matane"></a></li> -->
           <li><a href="http://www.fernandezcom.ca/"><img data-id="10" src="../images/sponsors/fernandez.png" alt="Fernandez"></a></li>
           <li><a href="http://www.hatem.ca/"><img data-id="11" src="../images/sponsors/hatem.png" alt="Hatem+D"></a></li>
           <li><a href="http://relevenement.com/"><img data-id="12" src="../images/sponsors/relevenement.png" alt="Relèvénement"></a></li>
-          <li><a href="http://www.osullivan-quebec.qc.ca/"><img data-id="13" src="../images/sponsors/osullivan.png" alt="Collège O’Sullivan"></a></li>
+          <!-- <li><a href="http://www.osullivan-quebec.qc.ca/"><img data-id="13" src="../images/sponsors/osullivan.png" alt="Collège O’Sullivan"></a></li> -->
         </ul>
       </div>
     </section>
 
     <!--[if !IE]><!--><script>(function(){
+      window.scrollTo(0, 1)
       if('ontouchend' in window)return;[
         '//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js',
         '../js/scripts.js'
