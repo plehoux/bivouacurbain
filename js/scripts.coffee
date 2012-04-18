@@ -56,6 +56,7 @@ class Bivouac.Invaders
     @enemiesClass = ['paolo', 'ramiro', 'zach']
     @enemiesClassIndex = 4
     @countdown = 7000
+    @startTime = new Date()
     @isGoing =
       left: false
       right: false
@@ -64,6 +65,8 @@ class Bivouac.Invaders
     this.initKeyboard()
     this.addEnemies()
     this.addScoreSpan()
+
+    _gaq.push ['_trackEvent', 'Space Invaders', 'Game initiated'] if _gaq
 
     @rowTimeout = setTimeout =>
       this.addRow()
@@ -232,6 +235,20 @@ class Bivouac.Invaders
     this.removeBullet()
     clearInterval @gameTimer
     clearTimeout @rowTimeout
+
+    ms = new Date() - @startTime
+    ms += 1000
+
+    s = ms / 1000
+    seconds = Math.floor(s % 60)
+    seconds = "0#{seconds}" if seconds < 10
+
+    m = s / 60
+    minutes = Math.floor(m % 60)
+    minutes = "0#{minutes}" if minutes < 10
+
+    _gaq.push ['_trackEvent', 'Space Invaders', 'Score', "#{@score}"] if _gaq
+    _gaq.push ['_trackEvent', 'Space Invaders', 'Duration', "#{minutes}:#{seconds}"] if _gaq
 
     endGame = $("""
       <div class="end-game hidden">

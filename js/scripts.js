@@ -79,6 +79,7 @@
       this.enemiesClass = ['paolo', 'ramiro', 'zach'];
       this.enemiesClassIndex = 4;
       this.countdown = 7000;
+      this.startTime = new Date();
       this.isGoing = {
         left: false,
         right: false
@@ -87,6 +88,7 @@
       this.initKeyboard();
       this.addEnemies();
       this.addScoreSpan();
+      if (_gaq) _gaq.push(['_trackEvent', 'Space Invaders', 'Game initiated']);
       this.rowTimeout = setTimeout(function() {
         return _this.addRow();
       }, this.countdown);
@@ -280,13 +282,27 @@
     };
 
     Invaders.prototype.endGame = function() {
-      var endGame,
+      var endGame, m, minutes, ms, s, seconds,
         _this = this;
       $('.enemy').not('.dead').addClass('dead');
       this.enemies = [];
       this.removeBullet();
       clearInterval(this.gameTimer);
       clearTimeout(this.rowTimeout);
+      ms = new Date() - this.startTime;
+      ms += 1000;
+      s = ms / 1000;
+      seconds = Math.floor(s % 60);
+      if (seconds < 10) seconds = "0" + seconds;
+      m = s / 60;
+      minutes = Math.floor(m % 60);
+      if (minutes < 10) minutes = "0" + minutes;
+      if (_gaq) {
+        _gaq.push(['_trackEvent', 'Space Invaders', 'Score', "" + this.score]);
+      }
+      if (_gaq) {
+        _gaq.push(['_trackEvent', 'Space Invaders', 'Duration', "" + minutes + ":" + seconds]);
+      }
       endGame = $("<div class=\"end-game hidden\">\n  <span>Game Over</span>\n  <p>You scored " + this.score + "</p>\n  <div class=\"social-share hidden\">\n    <a href=\"https://twitter.com/share\" class=\"twitter-share-button\" data-url=\"http://bivouacurbain.com\" data-text=\"I scored " + this.score + " points! Can you beat me?\" data-via=\"bivouacurbain\" data-hashtags=\"easteregg\">Tweet</a>\n    <div class=\"fb-like\" data-href=\"http://bivouacurbain.com\" data-send=\"false\" data-layout=\"button_count\" data-width=\"250\" data-show-faces=\"false\" data-font=\"lucida grande\"></div>\n  </div>\n\n  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=\"//platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>\n\n  <div id=\"fb-root\"></div>\n  <script>(function(d, s, id) {\n    var js, fjs = d.getElementsByTagName(s)[0];\n    if (d.getElementById(id)) return;\n    js = d.createElement(s); js.id = id;\n    js.src = \"//connect.facebook.net/" + {
         fr: 'fr_CA',
         en: 'en_US'
