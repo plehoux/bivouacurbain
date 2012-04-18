@@ -217,7 +217,7 @@ header
 #intro
   color: $dark-color
 
-  &:before
+  &:before, &:after
     display: none
 
   div.col
@@ -328,7 +328,7 @@ header
       background-color: #ec0f39
       text-decoration: none
 
-  .wrap > small
+  .wrap > small, figcaption
     display: block
     width: 55%
     margin: 0 auto
@@ -337,6 +337,43 @@ header
     font-size: 1.2rem
     text-align: center
     padding: 1em 5em 0
+
+  #photos
+    padding: 3em 0 0
+
+  figure
+    padding: 0 1%
+    position: relative
+
+    img
+      display: block
+      width: 100%
+      max-width: 360px
+      margin: 0 auto
+      border: solid 5px #fff
+      border-radius: 5px
+      -webkit-box-shadow: 0 2px 7px rgba(27,42,78,.1)
+
+    figcaption { width: 100% }
+
+    &:nth-child(1)
+      z-index: 2
+      position: relative
+      left: 45px
+
+      img
+        -webkit-transform: rotate(-2deg)
+
+    &:nth-child(2) img
+      -webkit-transform: rotate(1deg)
+
+    &:nth-child(3)
+      z-index: -1
+      position: relative
+      left: -45px
+
+      img
+        -webkit-transform: rotate(-2deg)
 
 // Testimonials --------------------------------------------------------------
 #testimonials
@@ -745,12 +782,7 @@ header
       top: -75px; left: -144px
       width: 288px; height: 192px
       background: url(../images/side-fold.png) center top no-repeat
-
       -webkit-background-size: 100%
-      -moz-background-size: 100%
-      -ms-background-size: 100%
-      -o-background-size: 100%
-      background-size: 100%
 
     &:after
       z-index: -1
@@ -760,12 +792,7 @@ header
       top: -75px; right: -144px
       width: 288px; height: 192px
       background: url(../images/side-fold.png) center top no-repeat
-
       -webkit-background-size: 100%
-      -moz-background-size: 100%
-      -ms-background-size: 100%
-      -o-background-size: 100%
-      background-size: 100%
 
   #inscription, #registration
     #game, #animation, #painting
@@ -785,6 +812,14 @@ header
     a:hover, a:focus { width: 94.5% }
 
     .wrap > small { width: 96% }
+
+    figure
+      left: 0 !important
+
+      img
+        -webkit-transform: rotate(0) !important
+
+    figure + figure { padding-top: 2em }
 
   #testimonials
     blockquote

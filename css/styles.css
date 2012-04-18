@@ -357,7 +357,8 @@ header .hint li + li {
 #intro {
   color: #1b1d1f;
 }
-#intro:before {
+#intro:before,
+#intro:after {
   display: none;
 }
 #intro div.col {
@@ -475,7 +476,9 @@ header .hint li + li {
   text-decoration: none;
 }
 #inscription .wrap > small,
-#registration .wrap > small {
+#registration .wrap > small,
+#inscription figcaption,
+#registration figcaption {
   display: block;
   width: 55%;
   margin: 0 auto;
@@ -484,6 +487,53 @@ header .hint li + li {
   font-size: 1.2rem;
   text-align: center;
   padding: 1em 5em 0;
+}
+#inscription #photos,
+#registration #photos {
+  padding: 3em 0 0;
+}
+#inscription figure,
+#registration figure {
+  padding: 0 1%;
+  position: relative;
+}
+#inscription figure img,
+#registration figure img {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  border: solid 5px #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 7px rgba(27,42,78,0.10);
+}
+#inscription figure figcaption,
+#registration figure figcaption {
+  width: 100%;
+}
+#inscription figure:nth-child(1),
+#registration figure:nth-child(1) {
+  z-index: 2;
+  position: relative;
+  left: 45px;
+}
+#inscription figure:nth-child(1) img,
+#registration figure:nth-child(1) img {
+  -webkit-transform: rotate(-2deg);
+}
+#inscription figure:nth-child(2) img,
+#registration figure:nth-child(2) img {
+  -webkit-transform: rotate(1deg);
+}
+#inscription figure:nth-child(3),
+#registration figure:nth-child(3) {
+  z-index: -1;
+  position: relative;
+  left: -45px;
+}
+#inscription figure:nth-child(3) img,
+#registration figure:nth-child(3) img {
+  -webkit-transform: rotate(-2deg);
 }
 #testimonials blockquote {
   position: relative;
@@ -968,10 +1018,6 @@ header .hint li + li {
     height: 192px;
     background: url("../images/side-fold.png") center top no-repeat;
     -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -ms-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
   }
   section:after {
     z-index: -1;
@@ -984,10 +1030,6 @@ header .hint li + li {
     height: 192px;
     background: url("../images/side-fold.png") center top no-repeat;
     -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -ms-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
   }
   #inscription #game,
   #registration #game,
@@ -1022,6 +1064,18 @@ header .hint li + li {
   #inscription .wrap > small,
   #registration .wrap > small {
     width: 96%;
+  }
+  #inscription figure,
+  #registration figure {
+    left: 0 !important;
+  }
+  #inscription figure img,
+  #registration figure img {
+    -webkit-transform: rotate(0) !important;
+  }
+  #inscription figure + figure,
+  #registration figure + figure {
+    padding-top: 2em;
   }
   #testimonials blockquote img {
     width: 42px;
