@@ -916,6 +916,10 @@ header .hint li + li {
 .ie8 html {
   min-width: 906px;
 }
+.ie8 #inscription a,
+.ie8 #registration a {
+  margin-top: 3em;
+}
 .ie7 .col-2 {
   width: 45%;
 }
