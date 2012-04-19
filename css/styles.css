@@ -521,13 +521,18 @@ header .hint li + li {
 #registration figure:nth-child(1) img {
   -webkit-transform: rotate(-2deg);
 }
+#inscription figure:nth-child(2),
+#registration figure:nth-child(2) {
+  z-index: 1;
+  position: relative;
+}
 #inscription figure:nth-child(2) img,
 #registration figure:nth-child(2) img {
   -webkit-transform: rotate(1deg);
 }
 #inscription figure:nth-child(3),
 #registration figure:nth-child(3) {
-  z-index: -1;
+  z-index: 0;
   position: relative;
   left: -45px;
 }

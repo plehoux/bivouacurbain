@@ -364,11 +364,15 @@ header
       img
         -webkit-transform: rotate(-2deg)
 
-    &:nth-child(2) img
-      -webkit-transform: rotate(1deg)
+    &:nth-child(2)
+      z-index: 1
+      position: relative
+
+      img
+        -webkit-transform: rotate(1deg)
 
     &:nth-child(3)
-      z-index: -1
+      z-index: 0
       position: relative
       left: -45px
 
