@@ -912,6 +912,10 @@ header .hint li + li {
   top: 175px;
   opacity: 0;
 }
+.ie8 body,
+.ie8 html {
+  min-width: 906px;
+}
 .ie7 .col-2 {
   width: 45%;
 }
