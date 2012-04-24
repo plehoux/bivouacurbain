@@ -48,6 +48,11 @@ p, ul, ol, dl, blockquote, table, figure { margin: .8em 0 }
 ::moz-selection
   color: #fff
   background-color: $red-color
+  
+small {
+  a:link, a:visited { color: #6a6d73; }
+  a:hover, a:focus { color: $red-color; }
+}
 
 // Headings ------------------------------------------------------------------
 hgroup > :first-child { margin-bottom: .3em }
@@ -297,7 +302,7 @@ header
     padding-left: 100px
     background: url(../images/paint.png) left top no-repeat
 
-  a
+  a.button
     display: block
     width: 55%
     margin: 2em auto 0
@@ -330,7 +335,7 @@ header
 
   .wrap > small, figcaption
     display: block
-    width: 55%
+    width: 58%
     margin: 0 auto
     color: #a8abb3
     font-size: 12px
@@ -493,7 +498,7 @@ header
 
 // Sponsors ------------------------------------------------------------------
 #sponsors
-  padding-bottom: 180px
+  padding-bottom: 0
 
   ul
     @extend .clearfix
@@ -540,6 +545,37 @@ header
     display: block
     max-width: 100%
     margin: 0 auto
+  
+  .signature
+    margin-top: 100px
+    text-align: center
+    
+    & > a 
+      background: url(/images/sponsors/heliom.png) center center no-repeat
+      position: relative
+      display: block
+      width: 65px 
+      height: 50px
+      opacity: 0.75
+      -webkit-transition: all .25s ease-out
+      -moz-transition: all .25s ease-out
+      -ms-transition: all .25s ease-out
+      -o-transition: all .4s ease-out
+      transition: all .25s ease-out
+      
+      &:hover, &:focus  
+        opacity: 1
+        top: -.4em
+      
+    small
+      display: block
+      padding: 1em 0 1.5em
+      color: #a8abb3
+      font-size: 12px
+      font-size: 1.2rem
+      
+      a { display: inline; }
+    
 
 // Invaders ------------------------------------------------------------------
 .playing
@@ -715,7 +751,7 @@ header
 
   #inscription, #registration
     a { margin-top: 3em }
-
+      
 .ie7
   .col-2 { width: 45% }
   .col-3 { width: 25% }
@@ -817,7 +853,7 @@ header
       float: left
       background-position: 20px 10px
 
-    a { width: 94.5% }
+    a.button { width: 94.5% }
     a:hover, a:focus { width: 94.5% }
 
     .wrap > small { width: 96% }
@@ -905,12 +941,12 @@ header
         line-height: 1.3
 
   #inscription, #registration
-    a
+    a.button
       font-size: 18px
       font-size: 1.8rem
 
     .wrap > small
-      padding: 1em 1em 0
+      padding: 1em 0.5em 0
 
     li { padding-left: 105px !important }
 
@@ -940,3 +976,10 @@ header
 @media (max-width: 348px)
   header nav li + li
     margin: 0 0 0 .3em
+    
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5), only screen and (-webkit-min-device-pixel-ratio : 2), only screen and (min-device-pixel-ratio : 2)
+  #sponsors
+    .signature > a
+      background-image: url(/images/sponsors/heliom2x.png)
+      background-size: 100%
+      

@@ -153,6 +153,14 @@ ol:after,
   color: #fff;
   background-color: #e4032e;
 }
+small a:link,
+small a:visited {
+  color: #6a6d73;
+}
+small a:hover,
+small a:focus {
+  color: #e4032e;
+}
 hgroup > :first-child {
   margin-bottom: 0.3em;
 }
@@ -443,8 +451,8 @@ header .hint li + li {
   padding-left: 100px;
   background: url("../images/paint.png") left top no-repeat;
 }
-#inscription a,
-#registration a {
+#inscription a.button,
+#registration a.button {
   display: block;
   width: 55%;
   margin: 2em auto 0;
@@ -467,10 +475,10 @@ header .hint li + li {
   -o-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
-#inscription a:hover,
-#registration a:hover,
-#inscription a:focus,
-#registration a:focus {
+#inscription a.button:hover,
+#registration a.button:hover,
+#inscription a.button:focus,
+#registration a.button:focus {
   width: 58%;
   background-color: #ec0f39;
   text-decoration: none;
@@ -480,7 +488,7 @@ header .hint li + li {
 #inscription figcaption,
 #registration figcaption {
   display: block;
-  width: 55%;
+  width: 58%;
   margin: 0 auto;
   color: #a8abb3;
   font-size: 12px;
@@ -657,7 +665,7 @@ header .hint li + li {
   color: #0348e4;
 }
 #sponsors {
-  padding-bottom: 180px;
+  padding-bottom: 0;
 }
 #sponsors ul {
   margin: 0 2%;
@@ -733,6 +741,38 @@ header .hint li + li {
   display: block;
   max-width: 100%;
   margin: 0 auto;
+}
+#sponsors .signature {
+  margin-top: 100px;
+  text-align: center;
+}
+#sponsors .signature > a {
+  background: url("/images/sponsors/heliom.png") center center no-repeat;
+  position: relative;
+  display: block;
+  width: 65px;
+  height: 50px;
+  opacity: 0.75;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.25s ease-out;
+}
+#sponsors .signature > a:hover,
+#sponsors .signature > a:focus {
+  opacity: 1;
+  top: -0.4em;
+}
+#sponsors .signature small {
+  display: block;
+  padding: 1em 0 1.5em;
+  color: #a8abb3;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+#sponsors .signature small a {
+  display: inline;
 }
 .playing {
   height: 525px;
@@ -1061,8 +1101,8 @@ header .hint li + li {
     float: left;
     background-position: 20px 10px;
   }
-  #inscription a,
-  #registration a {
+  #inscription a.button,
+  #registration a.button {
     width: 94.5%;
   }
   #inscription a:hover,
@@ -1178,14 +1218,14 @@ header .hint li + li {
     font-weight: 700;
     line-height: 1.3;
   }
-  #inscription a,
-  #registration a {
+  #inscription a.button,
+  #registration a.button {
     font-size: 18px;
     font-size: 1.8rem;
   }
   #inscription .wrap > small,
   #registration .wrap > small {
-    padding: 1em 1em 0;
+    padding: 1em 0.5em 0;
   }
   #inscription li,
   #registration li {
@@ -1222,5 +1262,11 @@ header .hint li + li {
 @media (max-width: 348px) {
   header nav li + li {
     margin: 0 0 0 0.3em;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5), only screen and (-webkit-min-device-pixel-ratio : 2), only screen and (min-device-pixel-ratio : 2) {
+  #sponsors .signature > a {
+    background-image: url("/images/sponsors/heliom2x.png");
+    background-size: 100%;
   }
 }
