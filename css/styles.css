@@ -979,6 +979,9 @@ header .hint li + li {
 .ie7 #judges div.col li {
   display: inline;
 }
+.ie7 #sponsors .signature {
+  padding-top: 100px;
+}
 @media (max-width: 960px) {
   .wrap {
     min-width: 730px;
