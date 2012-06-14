@@ -419,7 +419,22 @@ header
       color: $dark-color
 
 // Judges --------------------------------------------------------------------
-#judges
+#judges, #broadcast
+  
+  iframe
+    border:0
+    outline:0
+    width:640px
+    margin:80px auto
+    display:block
+
+  p
+    width:100%
+    margin:30px;
+
+  .iphone_link
+    display:none
+
   figure a
     @extend .newline
 
@@ -958,7 +973,19 @@ header
     blockquote:after
       left: 5px
 
-  #judges
+  #judges,#broadcast
+
+    iframe
+      display:none
+
+    p.iphone_link
+      display:block;
+      
+      a
+        font-size:18px
+        text-align:center
+        margin:10px
+
     div.col
       width: 100%
       float: none

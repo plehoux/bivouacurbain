@@ -135,13 +135,15 @@ figure {
 ol:after,
 #testimonials blockquote div:after,
 #judges div.col:after,
+#broadcast div.col:after,
 #sponsors ul:after {
   display: block;
   content: '';
   clear: both;
 }
 .newline:after,
-#judges figure a:after {
+#judges figure a:after,
+#broadcast figure a:after {
   content: '\A';
   white-space: pre;
 }
@@ -581,16 +583,37 @@ header .hint li + li {
   font-weight: 700;
   color: #1b1d1f;
 }
-#judges figure {
+#judges iframe,
+#broadcast iframe {
+  border: 0;
+  outline: 0;
+  width: 640px;
+  margin: 80px auto;
+  display: block;
+}
+#judges p,
+#broadcast p {
+  width: 100%;
+  margin: 30px;
+}
+#judges .iphone_link,
+#broadcast .iphone_link {
+  display: none;
+}
+#judges figure,
+#broadcast figure {
   padding-right: 5.5%;
   text-align: center;
 }
 #judges figure p,
-#judges figure a {
+#broadcast figure p,
+#judges figure a,
+#broadcast figure a {
   display: block;
   text-align: left;
 }
-#judges div.col {
+#judges div.col,
+#broadcast div.col {
   color: #1b1d1f;
   padding-top: 5.5em;
   float: none;
@@ -598,29 +621,36 @@ header .hint li + li {
   margin: 0 auto;
   text-align: center;
 }
-#judges div.col span {
+#judges div.col span,
+#broadcast div.col span {
   font-size: 24px;
   font-size: 2.4rem;
   font-weight: 700;
   padding: 0.5em 0 0;
 }
 #judges div.col ul,
-#judges div.col li {
+#broadcast div.col ul,
+#judges div.col li,
+#broadcast div.col li {
   display: inline-block;
   text-align: left;
 }
-#judges div.col ul {
+#judges div.col ul,
+#broadcast div.col ul {
   padding: 0 0 0 3.75em;
 }
-#judges div.col li {
+#judges div.col li,
+#broadcast div.col li {
   position: relative;
   top: 1em;
 }
-#judges div.col li + li {
+#judges div.col li + li,
+#broadcast div.col li + li {
   position: relative;
   padding: 0 0 0 5.4em;
 }
-#judges div.col li + li:after {
+#judges div.col li + li:after,
+#broadcast div.col li + li:after {
   display: block;
   content: '+';
   position: absolute;
@@ -631,7 +661,8 @@ header .hint li + li {
   font-size: 2.1rem;
   line-height: 0;
 }
-#judges div.col h3 {
+#judges div.col h3,
+#broadcast div.col h3 {
   margin: 0;
   float: left;
   font-size: 16px;
@@ -639,17 +670,20 @@ header .hint li + li {
   line-height: 1.25;
   padding: 0.85em 0 0 1.1em;
 }
-#judges div.col small {
+#judges div.col small,
+#broadcast div.col small {
   display: block;
   color: #5d6770;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
 }
-#judges div.col img {
+#judges div.col img,
+#broadcast div.col img {
   float: left;
 }
-#judges .social {
+#judges .social,
+#broadcast .social {
   clear: left;
   font-size: 18px;
   font-size: 1.8rem;
@@ -658,10 +692,12 @@ header .hint li + li {
   text-align: center;
   padding: 2em 0 0;
 }
-#judges .tw {
+#judges .tw,
+#broadcast .tw {
   color: #03b7e4;
 }
-#judges .fb {
+#judges .fb,
+#broadcast .fb {
   color: #0348e4;
 }
 #sponsors {
@@ -1237,28 +1273,49 @@ header .hint li + li {
   #testimonials blockquote:after {
     left: 5px;
   }
-  #judges div.col {
+  #judges iframe,
+  #broadcast iframe {
+    display: none;
+  }
+  #judges p.iphone_link,
+  #broadcast p.iphone_link {
+    display: block;
+  }
+  #judges p.iphone_link a,
+  #broadcast p.iphone_link a {
+    font-size: 18px;
+    text-align: center;
+    margin: 10px;
+  }
+  #judges div.col,
+  #broadcast div.col {
     width: 100%;
     float: none;
   }
-  #judges div.col span {
+  #judges div.col span,
+  #broadcast div.col span {
     font-size: 22px;
     font-size: 2.2rem;
   }
-  #judges div.col h3 {
+  #judges div.col h3,
+  #broadcast div.col h3 {
     padding-left: 0.3em;
   }
-  #judges div.col ul {
+  #judges div.col ul,
+  #broadcast div.col ul {
     width: 100%;
   }
-  #judges div.col li img {
+  #judges div.col li img,
+  #broadcast div.col li img {
     width: 42px;
   }
-  #judges div.col li + li {
+  #judges div.col li + li,
+  #broadcast div.col li + li {
     float: right;
     padding-left: 0;
   }
-  #judges div.col li + li:after {
+  #judges div.col li + li:after,
+  #broadcast div.col li + li:after {
     display: none;
   }
 }
